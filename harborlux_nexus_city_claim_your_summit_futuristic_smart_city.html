@@ -1,0 +1,3237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harborlux × NEXUS CITY — Claim Your Summit | Futuristic Smart City</title>
+  <meta name="description" content="Harborlux: harbour-view penthouses above a city that never sleeps. Claim your summit — seamlessly connected to NEXUS CITY, the next-generation smart city digital command center." />
+
+  <!-- Preload Exact Inter Variable Font -->
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" crossorigin />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            nexus: {
+              bg: '#050816',
+              obsidian: '#090d1f',
+              blue: '#00a8ff',
+              cyan: '#00f0ff',
+              purple: '#8b5cf6',
+              emerald: '#10b981',
+            },
+            harbor: {
+              bg: '#0D0A22',
+              ink: '#180F3C',
+              pink: '#F2B8C0',
+              pinkHover: '#F7C9D0',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons & Chart.js CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <style>
+    /* =========================================================================
+       EXACT INTER VARIABLE FONT (100-900)
+       ========================================================================= */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2') format('woff2');
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #0D0A22;
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* =========================================================================
+       PART A: HARBORLUX "CLAIM YOUR SUMMIT" HERO — EXACT SPECIFICATION
+       ========================================================================= */
+    :root {
+      --hl-u: 1px;
+    }
+
+    #harborlux-hero {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 520px;
+      overflow: hidden;
+      background-color: #0D0A22;
+      isolation: isolate;
+      user-select: none;
+    }
+
+    /* 16:9 Centered Cover Stage */
+    #hl-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hl-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      will-change: transform, opacity;
+    }
+
+    .hl-layer img,
+    .hl-layer video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Transform Origins */
+    #hl-back {
+      z-index: 1;
+      transform-origin: 50% 40%;
+    }
+
+    #hl-headline-outer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #hl-headline {
+      position: absolute;
+      inset: 0;
+      will-change: transform;
+    }
+
+    #hl-mid {
+      z-index: 3;
+      transform-origin: 50% 45%;
+    }
+
+    #hl-front {
+      z-index: 4;
+      transform-origin: 50% 100%;
+    }
+
+    /* Rain Dual-Video Crossfade */
+    .hl-rain-video {
+      opacity: 0;
+      transition: opacity 0.7s linear;
+      pointer-events: none;
+    }
+
+    .hl-rain-video.is-on {
+      opacity: 1;
+    }
+
+    /* Top Shade (top 45% of back layer) */
+    #hl-top-shade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      background: linear-gradient(180deg, rgba(13, 8, 40, 0.45) 0%, rgba(13, 8, 40, 0) 100%);
+      pointer-events: none;
+      will-change: opacity;
+    }
+
+    /* Glass Tint Panel in Front Layer (between posts, top rail to floor) */
+    #hl-glass-tint {
+      position: absolute;
+      left: 5.2%;
+      right: 4.1%;
+      top: 57.9%;
+      height: 25.4%;
+      background: linear-gradient(
+        180deg,
+        rgba(190, 200, 255, 0.10) 0%,
+        rgba(150, 160, 230, 0.05) 60%,
+        rgba(120, 130, 210, 0.08) 100%
+      );
+      backdrop-filter: blur(1.2px) saturate(1.05);
+      -webkit-backdrop-filter: blur(1.2px) saturate(1.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    #hl-front-img {
+      z-index: 2;
+    }
+
+    /* Headline Typography */
+    #hl-kicker {
+      position: absolute;
+      left: 50%;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: #FFFFFF;
+      white-space: nowrap;
+      will-change: transform, opacity;
+      margin: 0;
+    }
+
+    #hl-word {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      color: #FFFFFF;
+      white-space: nowrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    #hl-word .hl-letter {
+      display: inline-block;
+      will-change: transform, opacity;
+    }
+
+    /* Opening Box (z-index 6) */
+    #hl-opening {
+      position: absolute;
+      inset: 0;
+      z-index: 6;
+      pointer-events: none;
+      will-change: opacity;
+      background-color: #0D0A22;
+    }
+
+    #hl-opening img,
+    #hl-opening video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #hl-tilt-video {
+      opacity: 0;
+      will-change: opacity;
+    }
+
+    /* Doors Box (z-index 7) */
+    #hl-doors {
+      position: absolute;
+      inset: 0;
+      z-index: 7;
+      display: flex;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hl-door {
+      width: 50%;
+      height: 100%;
+      background-image: url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261117_063048_97fd9a70-adbe-46bd-bfce-ec1004f6c7d8.png&w=2000&q=85');
+      background-size: 200% 100%;
+      background-repeat: no-repeat;
+      will-change: transform;
+    }
+
+    #hl-door-left {
+      background-position: 0% 50%;
+    }
+
+    #hl-door-right {
+      background-position: 100% 50%;
+    }
+
+    /* Start States while .intro is active */
+    #harborlux-hero.intro #hl-nav {
+      opacity: 0;
+    }
+    #harborlux-hero.intro #hl-kicker,
+    #harborlux-hero.intro #hl-word .hl-letter {
+      opacity: 0;
+    }
+    #harborlux-hero.intro #hl-front {
+      transform: translateY(66%);
+    }
+    #harborlux-hero.intro #hl-top-shade {
+      opacity: 0;
+    }
+
+    /* Harborlux Hero Nav (Pinned to Hero Top) */
+    #hl-nav {
+      position: absolute;
+      top: calc(52 * var(--hl-u));
+      left: 0;
+      right: 0;
+      height: calc(48 * var(--hl-u));
+      padding: 0 calc(125 * var(--hl-u));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+      font-size: calc(15 * var(--hl-u));
+      will-change: transform, opacity;
+      pointer-events: auto;
+    }
+
+    .hl-wordmark {
+      font-weight: 600;
+      font-size: calc(17 * var(--hl-u));
+      letter-spacing: 0.28em;
+      color: #FFFFFF;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s ease;
+    }
+    .hl-wordmark:hover {
+      opacity: 0.85;
+    }
+
+    .hl-pill-bar {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: calc(48 * var(--hl-u));
+      padding: calc(5 * var(--hl-u));
+      display: flex;
+      align-items: center;
+      gap: calc(6 * var(--hl-u));
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+    }
+
+    .hl-pill-link {
+      height: calc(38 * var(--hl-u));
+      padding: 0 calc(22 * var(--hl-u));
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      cursor: pointer;
+    }
+
+    .hl-pill-link:hover {
+      background-color: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+    }
+
+    .hl-pill-link.active {
+      background-color: #FFFFFF;
+      color: #180F3C;
+      font-weight: 600;
+    }
+
+    .hl-nav-right {
+      display: flex;
+      align-items: center;
+      gap: calc(30 * var(--hl-u));
+    }
+
+    .hl-lang {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(9 * var(--hl-u));
+      color: rgba(255, 255, 255, 0.90);
+      font-weight: 400;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    .hl-globe {
+      width: calc(20 * var(--hl-u));
+      height: calc(20 * var(--hl-u));
+      flex-shrink: 0;
+    }
+
+    .hl-enquire-btn {
+      height: calc(44 * var(--hl-u));
+      padding: 0 calc(27 * var(--hl-u));
+      border-radius: 9999px;
+      background-color: #F2B8C0;
+      color: #180F3C;
+      font-weight: 600;
+      font-size: inherit;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hl-enquire-btn:hover {
+      background-color: #F7C9D0;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(242, 184, 192, 0.28);
+    }
+
+    /* Responsive Hero Nav: Below 820px wide */
+    @media (max-width: 819px) {
+      #hl-nav {
+        top: 16px;
+        height: auto;
+        padding: 0 18px;
+        flex-wrap: wrap;
+        row-gap: 12px;
+        font-size: 13px;
+      }
+      .hl-wordmark {
+        font-size: 14px;
+        letter-spacing: 0.22em;
+        order: 1;
+      }
+      .hl-nav-right {
+        gap: 14px;
+        order: 2;
+      }
+      .hl-lang {
+        font-size: 13px;
+        gap: 6px;
+      }
+      .hl-globe {
+        width: 16px;
+        height: 16px;
+      }
+      .hl-enquire-btn {
+        height: 36px;
+        padding: 0 16px;
+        font-size: 13px;
+      }
+      .hl-pill-bar {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        height: 40px;
+        padding: 4px;
+        gap: 4px;
+        justify-content: space-between;
+      }
+      .hl-pill-link {
+        flex: 1 1 0;
+        height: 32px;
+        padding: 0 10px;
+        font-size: 12px;
+      }
+    }
+
+    /* At 360px and narrower */
+    @media (max-width: 360px) {
+      .hl-pill-link {
+        font-size: 11px;
+        padding: 0 6px;
+      }
+    }
+
+    /* Short Landscape Screens (height <= 500px) */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #hl-nav {
+        top: 12px;
+        height: 34px;
+        padding: 0 24px;
+        flex-wrap: nowrap;
+        font-size: 12px;
+      }
+      .hl-wordmark {
+        font-size: 13px;
+        letter-spacing: 0.24em;
+        order: 1;
+      }
+      .hl-pill-bar {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: 34px;
+        padding: 3px;
+        gap: 4px;
+        order: 2;
+      }
+      .hl-pill-link {
+        flex: 0 0 auto;
+        height: 28px;
+        padding: 0 14px;
+        font-size: 12px;
+      }
+      .hl-nav-right {
+        gap: 16px;
+        order: 3;
+      }
+      .hl-lang {
+        font-size: 12px;
+        gap: 6px;
+      }
+      .hl-globe {
+        width: 16px;
+        height: 16px;
+      }
+      .hl-enquire-btn {
+        height: 32px;
+        padding: 0 16px;
+        font-size: 12px;
+      }
+    }
+
+    /* Unobtrusive Bottom-Center Hero CTA (fades in after 6.5s) */
+    #hl-bottom-cta {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    #hl-bottom-cta.visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    /* =========================================================================
+       PART B: NEXUS CITY — FUTURISTIC SMART CITY CONTROL CENTER STYLES
+       ========================================================================= */
+    #nexus-city-wrapper {
+      position: relative;
+      background: radial-gradient(circle at 15% 10%, rgba(0, 168, 255, 0.08), transparent 40%),
+                  radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 45%),
+                  linear-gradient(180deg, #0D0A22 0%, #050816 6%, #070b1a 50%, #050816 100%);
+      overflow-x: clip;
+    }
+
+    /* Ambient Cyber Canvas */
+    #nexus-bg-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.45;
+    }
+
+    /* Premium Glassmorphism Card */
+    .nexus-glass {
+      background: rgba(13, 20, 42, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 240, 255, 0.14);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nexus-glass:hover {
+      border-color: rgba(0, 240, 255, 0.34);
+      box-shadow: 0 14px 42px rgba(0, 168, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .nexus-card-lift:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Sticky Floating Nexus Navbar */
+    #nexus-navbar {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-120%);
+      width: min(1280px, calc(100% - 24px));
+      z-index: 50;
+      background: rgba(8, 13, 30, 0.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #nexus-navbar.shown {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Neon Text & Glowing Buttons */
+    .text-glow-cyan {
+      text-shadow: 0 0 24px rgba(0, 240, 255, 0.45);
+    }
+
+    .btn-cyber {
+      background: linear-gradient(135deg, #00a8ff 0%, #00f0ff 100%);
+      color: #050816;
+      font-weight: 700;
+      box-shadow: 0 0 24px rgba(0, 240, 255, 0.32);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+    .btn-cyber:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 34px rgba(0, 240, 255, 0.55);
+      filter: brightness(1.06);
+    }
+
+    .btn-cyber-outline {
+      background: rgba(0, 240, 255, 0.06);
+      border: 1px solid rgba(0, 240, 255, 0.38);
+      color: #e0f7ff;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-cyber-outline:hover {
+      background: rgba(0, 240, 255, 0.16);
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px rgba(0, 240, 255, 0.22);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-up.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animated Pulse & Eco Visuals */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .turbine-spin {
+      transform-origin: center;
+      animation: spinSlow 7s linear infinite;
+    }
+
+    @keyframes swayTree {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2.5deg); }
+    }
+    .tree-sway {
+      transform-origin: bottom center;
+      animation: swayTree 5s ease-in-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(2.1); opacity: 0; }
+    }
+    .map-marker-pulse {
+      animation: pulseRing 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    /* Reduced Motion Override */
+    @media (prefers-reduced-motion: reduce) {
+      .turbine-spin, .tree-sway, .map-marker-pulse {
+        animation: none !important;
+      }
+      .reveal-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050816;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 168, 255, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 240, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       PART A: HARBORLUX "CLAIM YOUR SUMMIT" CINEMATIC HERO
+       ========================================================================= -->
+  <section id="harborlux-hero" class="intro" aria-label="Harborlux Claim Your Summit Hero">
+    <!-- 16:9 Stage (Back, Headline, Mid, Front) -->
+    <div id="hl-stage">
+      <!-- 1. Back Layer -->
+      <div id="hl-back" class="hl-layer">
+        <img
+          id="hl-back-img"
+          src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261117_063251_24fbd7cc-00df-49ec-8fbf-d8a0349b1e98.png&w=2000&q=85"
+          alt="Stormy violet harbour night sky"
+          decoding="async"
+        />
+        <video
+          id="hl-rain-a"
+          class="hl-rain-video"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261117_063703_04e54df7-2236-4dff-b95b-a9a34c1f78ec.mp4"
+          muted
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+        <video
+          id="hl-rain-b"
+          class="hl-rain-video"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261117_063703_04e54df7-2236-4dff-b95b-a9a34c1f78ec.mp4"
+          muted
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+        <div id="hl-top-shade"></div>
+      </div>
+
+      <!-- 2. Headline Block (between Back and Mid layers) -->
+      <div id="hl-headline-outer">
+        <div id="hl-headline">
+          <p id="hl-kicker">Claim Your</p>
+          <h1 id="hl-word" aria-label="Claim Your Summit">
+            <span class="hl-letter">S</span><span class="hl-letter">u</span><span class="hl-letter">m</span><span class="hl-letter">m</span><span class="hl-letter">i</span><span class="hl-letter">t</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- 3. Mid Layer (Neon City Skyline) -->
+      <div id="hl-mid" class="hl-layer">
+        <img
+          id="hl-mid-img"
+          src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261117_063252_b9f2fecf-9be0-485f-842f-3aa6bbc251f2.png&w=2000&q=85"
+          alt="Neon harbour skyline and reflections"
+          decoding="async"
+        />
+      </div>
+
+      <!-- 4. Front Layer (Glass Tint Panel + Penthouse Balcony & Man) -->
+      <div id="hl-front" class="hl-layer">
+        <div id="hl-glass-tint" aria-hidden="true"></div>
+        <img
+          id="hl-front-img"
+          src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261117_063151_7804d758-a2eb-4499-9b56-8f493edbb206.png&w=2000&q=85"
+          alt="Penthouse glass balcony overlooking the rainy neon harbour"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <!-- Opening Box (z-index 6: Aerial Still + Tilt Video) -->
+    <div id="hl-opening">
+      <img
+        id="hl-aerial-img"
+        src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261117_063055_ee1debcd-d200-484f-b94f-fad6dcffd4eb.png&w=2000&q=85"
+        alt="Top-down skyscraper rooftop pool at night"
+        decoding="async"
+      />
+      <video
+        id="hl-tilt-video"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261117_063355_a600befc-45d6-4a32-9db6-9d6565a89609.mp4"
+        muted
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      ></video>
+    </div>
+
+    <!-- Doors Box (z-index 7) -->
+    <div id="hl-doors" aria-hidden="true">
+      <div id="hl-door-left" class="hl-door"></div>
+      <div id="hl-door-right" class="hl-door"></div>
+    </div>
+
+    <!-- Harborlux Hero Nav (Pinned to Hero Top) -->
+    <nav id="hl-nav" aria-label="Harborlux Primary Navigation">
+      <a href="#harborlux-hero" class="hl-wordmark">HARBORLUX</a>
+
+      <div class="hl-pill-bar" role="menubar">
+        <a href="#harborlux-hero" class="hl-pill-link active" role="menuitem">Home</a>
+        <a href="#nexus-home" class="hl-pill-link" role="menuitem">The Firm</a>
+        <a href="#locations" class="hl-pill-link" role="menuitem">Skyline Homes</a>
+        <a href="#footer" class="hl-pill-link" role="menuitem">Talk To Us</a>
+      </div>
+
+      <div class="hl-nav-right">
+        <button type="button" class="hl-lang" id="hl-lang-btn" aria-label="Language selector">
+          <svg class="hl-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5"></circle>
+            <line x1="2.5" y1="12" x2="21.5" y2="12"></line>
+            <path d="M12 2.5C14.7 5.3 16.2 8.5 16.2 12C16.2 15.5 14.7 18.7 12 21.5C9.3 18.7 7.8 15.5 7.8 12C7.8 8.5 9.3 5.3 12 2.5Z"></path>
+          </svg>
+          <span>Eng</span>
+        </button>
+        <button type="button" class="hl-enquire-btn" id="hl-enquire-trigger">Enquire</button>
+      </div>
+    </nav>
+
+    <!-- Sleek Unobtrusive Bottom-Center CTA (Fades in after 6.5s) -->
+    <div id="hl-bottom-cta">
+      <a
+        href="#nexus-home"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 shadow-lg transition-all"
+      >
+        <span>Explore NEXUS Smart City</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+      <button
+        type="button"
+        id="hl-replay-btn"
+        title="Replay 7.4s Cinematic Intro"
+        class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium text-white/80 hover:text-white bg-black/35 hover:bg-black/55 backdrop-blur-md border border-white/15 transition-all cursor-pointer"
+      >
+        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+        <span class="hidden sm:inline">Replay Intro</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PART B: NEXUS CITY — FUTURISTIC SMART CITY CONTROL CENTER
+       ========================================================================= -->
+  <div id="nexus-city-wrapper">
+    <!-- Subtle Animated Cyber Particle Background -->
+    <canvas id="nexus-bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Sticky Floating Glass Navigation Bar (Reveals on Scroll Past Hero) -->
+    <header id="nexus-navbar" class="rounded-2xl px-4 sm:px-6 py-3">
+      <div class="flex items-center justify-between gap-4">
+        <!-- Animated NEXUS CITY Logo -->
+        <a href="#nexus-home" class="flex items-center gap-2.5 group shrink-0">
+          <div class="relative w-9 h-9 rounded-xl bg-gradient-to-br from-nexus-blue to-nexus-purple flex items-center justify-center shadow-lg shadow-cyan-500/25">
+            <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+            <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-nexus-cyan animate-ping"></span>
+            <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-nexus-cyan"></span>
+          </div>
+          <div class="leading-tight">
+            <span class="block text-sm font-bold tracking-[0.2em] text-white group-hover:text-nexus-cyan transition-colors">NEXUS CITY</span>
+            <span class="block text-[10px] tracking-widest text-cyan-300/75 uppercase">Command OS v4.2</span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <nav class="hidden lg:flex items-center gap-1" aria-label="NEXUS CITY Navigation">
+          <a href="#nexus-home" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Home</a>
+          <a href="#transportation" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Transportation</a>
+          <a href="#healthcare" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Healthcare</a>
+          <a href="#education" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Education</a>
+          <a href="#public-services" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Public Services</a>
+          <a href="#safety" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Safety</a>
+          <a href="#statistics" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Statistics</a>
+          <a href="#locations" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">Locations</a>
+        </nav>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-2">
+          <a href="#harborlux-hero" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-harbor-pink border border-harbor-pink/30 transition-colors">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            Harborlux
+          </a>
+          <button
+            type="button"
+            id="nexus-mobile-toggle"
+            class="lg:hidden p-2 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/10"
+            aria-label="Toggle navigation menu"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="nexus-mobile-menu" class="hidden lg:hidden mt-3 pt-3 border-t border-white/10 grid grid-cols-2 gap-2">
+        <a href="#nexus-home" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Home</a>
+        <a href="#transportation" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Transportation</a>
+        <a href="#healthcare" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Healthcare</a>
+        <a href="#education" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Education</a>
+        <a href="#public-services" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Public Services</a>
+        <a href="#safety" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Safety</a>
+        <a href="#statistics" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Statistics</a>
+        <a href="#locations" class="mobile-nav-link px-3 py-2 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 text-slate-200">Locations</a>
+      </div>
+    </header>
+
+    <main class="relative z-10">
+      <!-- =====================================================================
+           SECTION 1: NEXUS CITY COMMAND BANNER & OVERVIEW
+           ===================================================================== -->
+      <section id="nexus-home" class="relative pt-20 sm:pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="nexus-glass rounded-3xl overflow-hidden relative border border-cyan-400/20">
+          <!-- Interactive Animated Canvas Futuristic Skyline -->
+          <div class="relative w-full h-[460px] sm:h-[520px] lg:h-[560px]">
+            <canvas id="nexus-skyline-canvas" class="absolute inset-0 w-full h-full block"></canvas>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/55 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#050816]/90 via-[#050816]/45 to-transparent"></div>
+
+            <!-- Banner Content -->
+            <div class="relative z-10 h-full flex flex-col justify-end p-6 sm:p-10 lg:p-14 max-w-3xl">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-semibold tracking-wider uppercase w-fit mb-5">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                NEXUS METROPOLITAN DIGITAL TWIN • SIMULATED TELEMETRY
+              </div>
+              <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08] text-glow-cyan">
+                THE CITY OF TOMORROW, <span class="text-transparent bg-clip-text bg-gradient-to-r from-nexus-cyan via-nexus-blue to-nexus-purple">TODAY.</span>
+              </h2>
+              <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
+                Connected infrastructure. Intelligent mobility. Sustainable living. Welcome to the unified command portal powering Harborlux District and Greater NEXUS CITY.
+              </p>
+              <div class="mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
+                <a href="#transportation" class="btn-cyber px-6 py-3.5 rounded-xl text-sm inline-flex items-center gap-2">
+                  <i data-lucide="compass" class="w-4 h-4"></i>
+                  Explore Smart City
+                </a>
+                <a href="#statistics" class="btn-cyber-outline px-6 py-3.5 rounded-xl text-sm font-semibold inline-flex items-center gap-2">
+                  <i data-lucide="activity" class="w-4 h-4"></i>
+                  View Live Dashboard
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated Counters Strip -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-cyan-500/15 border-t border-cyan-400/20">
+            <div class="bg-[#070c1e]/95 p-5 sm:p-6">
+              <div class="flex items-center justify-between text-xs text-slate-400 uppercase tracking-wider">
+                <span>Total Population</span>
+                <i data-lucide="users" class="w-4 h-4 text-nexus-cyan"></i>
+              </div>
+              <div class="mt-2 text-2xl sm:text-3xl font-bold text-white tabular-nums" data-counter="4820450" data-format="int">0</div>
+              <div class="mt-1 text-xs text-emerald-400">+2.4% YoY Metro Growth</div>
+            </div>
+
+            <div class="bg-[#070c1e]/95 p-5 sm:p-6">
+              <div class="flex items-center justify-between text-xs text-slate-400 uppercase tracking-wider">
+                <span>Smart Buildings</span>
+                <i data-lucide="building-2" class="w-4 h-4 text-nexus-blue"></i>
+              </div>
+              <div class="mt-2 text-2xl sm:text-3xl font-bold text-white tabular-nums" data-counter="18940" data-format="int">0</div>
+              <div class="mt-1 text-xs text-cyan-300">98.7% IoT Grid Synced</div>
+            </div>
+
+            <div class="bg-[#070c1e]/95 p-5 sm:p-6">
+              <div class="flex items-center justify-between text-xs text-slate-400 uppercase tracking-wider">
+                <span>Connected Vehicles</span>
+                <i data-lucide="car-front" class="w-4 h-4 text-nexus-purple"></i>
+              </div>
+              <div class="mt-2 text-2xl sm:text-3xl font-bold text-white tabular-nums" data-counter="1245800" data-format="int">0</div>
+              <div class="mt-1 text-xs text-purple-300">V2X Autonomous Mesh</div>
+            </div>
+
+            <div class="bg-[#070c1e]/95 p-5 sm:p-6">
+              <div class="flex items-center justify-between text-xs text-slate-400 uppercase tracking-wider">
+                <span>Renewable Energy</span>
+                <i data-lucide="zap" class="w-4 h-4 text-nexus-emerald"></i>
+              </div>
+              <div class="mt-2 text-2xl sm:text-3xl font-bold text-white tabular-nums" data-counter="84.6" data-format="percent">0%</div>
+              <div class="mt-1 text-xs text-emerald-400">Solar + Offshore Wind</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 2: SMART TRANSPORTATION DASHBOARD
+           ===================================================================== -->
+      <section id="transportation" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-nexus-cyan">Intelligent Mobility Mesh</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Smart Transportation Control</h2>
+            <p class="mt-2 text-sm text-slate-400 max-w-2xl">Real-time simulated traffic telemetry, adaptive signal synchronization, autonomous transit routing, EV charging, and smart parking availability.</p>
+          </div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-medium w-fit">
+            <i data-lucide="radio" class="w-3.5 h-3.5"></i>
+            SIMULATED TELEMETRY
+          </span>
+        </div>
+
+        <!-- Traffic Status Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5 border-l-4 border-l-emerald-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-wider text-slate-400">Harbor Ringway</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300">LOW</span>
+            </div>
+            <div class="mt-2 text-xl font-bold text-white">68 km/h Avg</div>
+            <p class="text-xs text-slate-400 mt-1">Est. crossing: 9 min • Free flow</p>
+          </div>
+
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5 border-l-4 border-l-amber-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-wider text-slate-400">Central Skyway</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300">MODERATE</span>
+            </div>
+            <div class="mt-2 text-xl font-bold text-white">41 km/h Avg</div>
+            <p class="text-xs text-slate-400 mt-1">Est. crossing: 16 min • AI rerouting active</p>
+          </div>
+
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5 border-l-4 border-l-rose-500">
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-wider text-slate-400">Midtown Tunnel</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-500/20 text-rose-300">HEAVY</span>
+            </div>
+            <div class="mt-2 text-xl font-bold text-white">19 km/h Avg</div>
+            <p class="text-xs text-slate-400 mt-1">Est. crossing: 27 min • Use Metro Line M2</p>
+          </div>
+
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5 border-l-4 border-l-cyan-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-wider text-slate-400">Smart Traffic Lights</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300">OPTIMAL</span>
+            </div>
+            <div class="mt-2 text-xl font-bold text-white">4,182 / 4,200</div>
+            <p class="text-xs text-slate-400 mt-1">AI green-wave sync reduced idle by 31%</p>
+          </div>
+        </div>
+
+        <!-- Interactive Map + Route Planner Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Interactive Transportation Map -->
+          <div class="lg:col-span-7 nexus-glass rounded-3xl p-5 flex flex-col">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <h3 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="map" class="w-4 h-4 text-nexus-cyan"></i>
+                Live Mobility Mesh Map (Simulated)
+              </h3>
+              <div class="flex flex-wrap gap-1.5" id="transport-layer-toggles">
+                <button type="button" data-layer="traffic" class="layer-toggle active px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-cyan-500/25 text-cyan-200 border border-cyan-400/40 cursor-pointer">Traffic</button>
+                <button type="button" data-layer="metro" class="layer-toggle active px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-purple-500/25 text-purple-200 border border-purple-400/40 cursor-pointer">Metro</button>
+                <button type="button" data-layer="bus" class="layer-toggle active px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-blue-500/25 text-blue-200 border border-blue-400/40 cursor-pointer">EV Bus</button>
+                <button type="button" data-layer="ev" class="layer-toggle active px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-emerald-500/25 text-emerald-200 border border-emerald-400/40 cursor-pointer">EV & Bikes</button>
+              </div>
+            </div>
+
+            <div class="relative w-full h-[320px] sm:h-[360px] rounded-2xl overflow-hidden bg-[#040814] border border-white/10">
+              <canvas id="transport-map-canvas" class="w-full h-full block"></canvas>
+              <div class="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-xl bg-black/65 backdrop-blur-md border border-white/10 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Autonomous Pods</span>
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span> MagLev Metro</span>
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> EV Chargers & Bike Docks</span>
+              </div>
+            </div>
+
+            <!-- Micro Infrastructure Stats -->
+            <div class="grid grid-cols-3 gap-3 mt-4">
+              <div class="rounded-xl bg-white/5 border border-white/10 p-3">
+                <div class="text-[11px] text-slate-400">EV Chargers Open</div>
+                <div class="text-lg font-bold text-emerald-400 mt-0.5">1,428 <span class="text-xs font-normal text-slate-400">/ 1,650</span></div>
+              </div>
+              <div class="rounded-xl bg-white/5 border border-white/10 p-3">
+                <div class="text-[11px] text-slate-400">Bike-Share Docks</div>
+                <div class="text-lg font-bold text-cyan-400 mt-0.5">3,890 <span class="text-xs font-normal text-slate-400">ready</span></div>
+              </div>
+              <div class="rounded-xl bg-white/5 border border-white/10 p-3">
+                <div class="text-[11px] text-slate-400">Smart Parking</div>
+                <div class="text-lg font-bold text-blue-400 mt-0.5">72% <span class="text-xs font-normal text-slate-400">open</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Working Route Planning Interface -->
+          <div class="lg:col-span-5 nexus-glass rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+              <h3 class="text-base font-semibold text-white flex items-center gap-2 mb-4">
+                <i data-lucide="route" class="w-4 h-4 text-nexus-purple"></i>
+                Intelligent Route Planner
+              </h3>
+
+              <form id="route-planner-form" class="space-y-4">
+                <div>
+                  <label for="route-origin" class="block text-xs font-medium text-slate-400 mb-1.5">Origin Hub</label>
+                  <select id="route-origin" class="w-full rounded-xl bg-[#091026] border border-white/15 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-nexus-cyan">
+                    <option value="Harborlux Summit Tower">Harborlux Summit Tower (Waterfront)</option>
+                    <option value="Nexus City Hall">Nexus City Hall</option>
+                    <option value="Nexus Central Medical">Nexus Central Medical</option>
+                    <option value="Quantum University">Quantum University</option>
+                    <option value="AeroNexus International Airport">AeroNexus International Airport</option>
+                    <option value="Central MagLev Terminal">Central MagLev Terminal</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="route-dest" class="block text-xs font-medium text-slate-400 mb-1.5">Destination Hub</label>
+                  <select id="route-dest" class="w-full rounded-xl bg-[#091026] border border-white/15 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-nexus-cyan">
+                    <option value="Central MagLev Terminal">Central MagLev Terminal</option>
+                    <option value="Harborlux Summit Tower">Harborlux Summit Tower (Waterfront)</option>
+                    <option value="Nexus City Hall">Nexus City Hall</option>
+                    <option value="Nexus Central Medical">Nexus Central Medical</option>
+                    <option value="Quantum University">Quantum University</option>
+                    <option value="AeroNexus International Airport">AeroNexus International Airport</option>
+                    <option value="Skyline Eco Park">Skyline Eco Park</option>
+                  </select>
+                </div>
+
+                <div>
+                  <span class="block text-xs font-medium text-slate-400 mb-1.5">Transit Mode</span>
+                  <div class="grid grid-cols-2 gap-2" id="route-mode-buttons">
+                    <button type="button" data-mode="metro" class="route-mode-btn active px-3 py-2 rounded-xl text-xs font-semibold bg-cyan-500/20 text-cyan-200 border border-cyan-400/50 flex items-center justify-center gap-1.5 cursor-pointer">
+                      <i data-lucide="train-front" class="w-3.5 h-3.5"></i> MagLev Metro
+                    </button>
+                    <button type="button" data-mode="evbus" class="route-mode-btn px-3 py-2 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 flex items-center justify-center gap-1.5 cursor-pointer">
+                      <i data-lucide="bus" class="w-3.5 h-3.5"></i> EV Express Bus
+                    </button>
+                    <button type="button" data-mode="pod" class="route-mode-btn px-3 py-2 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 flex items-center justify-center gap-1.5 cursor-pointer">
+                      <i data-lucide="car" class="w-3.5 h-3.5"></i> Autonomous Pod
+                    </button>
+                    <button type="button" data-mode="bike" class="route-mode-btn px-3 py-2 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 flex items-center justify-center gap-1.5 cursor-pointer">
+                      <i data-lucide="bike" class="w-3.5 h-3.5"></i> Bike-Share
+                    </button>
+                  </div>
+                </div>
+
+                <button type="submit" class="w-full btn-cyber py-3 rounded-xl text-sm flex items-center justify-center gap-2 cursor-pointer">
+                  <i data-lucide="navigation" class="w-4 h-4"></i>
+                  Calculate Optimal Route
+                </button>
+              </form>
+            </div>
+
+            <!-- Route Result Box -->
+            <div id="route-result" class="mt-5 rounded-2xl bg-[#070d20] border border-cyan-400/25 p-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs uppercase tracking-wider text-cyan-300 font-semibold">Estimated Trip</span>
+                <span id="route-congestion" class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300">Low Congestion</span>
+              </div>
+              <div class="mt-2 flex items-baseline gap-3">
+                <span id="route-time" class="text-3xl font-bold text-white">11 min</span>
+                <span id="route-distance" class="text-xs text-slate-400">6.4 km • Line M1 Express</span>
+              </div>
+              <div class="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+                <span id="route-co2" class="text-emerald-400 font-medium">1.8 kg CO₂ saved</span>
+                <span id="route-next" class="text-cyan-300">Next departure: 2 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 3: HEALTHCARE & HOSPITALS
+           ===================================================================== -->
+      <section id="healthcare" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400">Smart Bio-Medical Network</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Healthcare &amp; Hospitals</h2>
+            <p class="mt-2 text-sm text-slate-400 max-w-2xl">Connected hospital telemetry, ambulance fleet readiness, ER wait estimates, and specialist availability across NEXUS CITY.</p>
+          </div>
+          <div class="flex flex-wrap gap-2" id="specialty-filter">
+            <button type="button" data-spec="all" class="spec-btn active px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 cursor-pointer">All Centers</button>
+            <button type="button" data-spec="Trauma" class="spec-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Trauma &amp; ER</button>
+            <button type="button" data-spec="Cardiology" class="spec-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Cardiology</button>
+            <button type="button" data-spec="Pediatrics" class="spec-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Pediatrics</button>
+          </div>
+        </div>
+
+        <!-- Healthcare KPI Bar -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="nexus-glass rounded-2xl p-4 border-t-2 border-t-emerald-400">
+            <div class="text-xs text-slate-400">Ambulances Ready</div>
+            <div class="mt-1 text-2xl font-bold text-emerald-400">42 <span class="text-xs font-normal text-slate-400">/ 48 Active</span></div>
+            <div class="text-[11px] text-slate-400 mt-1">Avg Dispatch: 3.8 min</div>
+          </div>
+          <div class="nexus-glass rounded-2xl p-4 border-t-2 border-t-cyan-400">
+            <div class="text-xs text-slate-400">Citywide ER Wait (Sim)</div>
+            <div class="mt-1 text-2xl font-bold text-cyan-300">12 min</div>
+            <div class="text-[11px] text-slate-400 mt-1">AI Triage Assisted</div>
+          </div>
+          <div class="nexus-glass rounded-2xl p-4 border-t-2 border-t-blue-400">
+            <div class="text-xs text-slate-400">ICU Bed Availability</div>
+            <div class="mt-1 text-2xl font-bold text-blue-300">28% Open</div>
+            <div class="text-[11px] text-slate-400 mt-1">164 beds ready</div>
+          </div>
+          <div class="nexus-glass rounded-2xl p-4 border-t-2 border-t-teal-400">
+            <div class="text-xs text-slate-400">On-Duty Specialists</div>
+            <div class="mt-1 text-2xl font-bold text-teal-300">614</div>
+            <div class="text-[11px] text-slate-400 mt-1">24/7 Tele-Med Linked</div>
+          </div>
+        </div>
+
+        <!-- Hospital Cards + Interactive Mini-Map -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div id="hospital-cards" class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="lg:col-span-4 nexus-glass rounded-3xl p-5 flex flex-col justify-between">
+            <div>
+              <h3 class="text-sm font-semibold text-white flex items-center gap-2 mb-3">
+                <i data-lucide="crosshair" class="w-4 h-4 text-emerald-400"></i>
+                Hospital Network Locator
+              </h3>
+              <!-- Interactive SVG Hospital Mini-Map -->
+              <div class="relative w-full h-56 rounded-2xl bg-[#04101c] border border-emerald-400/20 overflow-hidden">
+                <svg viewBox="0 0 320 220" class="w-full h-full">
+                  <defs>
+                    <pattern id="medGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+                      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(16,185,129,0.12)" stroke-width="0.8"/>
+                    </pattern>
+                  </defs>
+                  <rect width="320" height="220" fill="url(#medGrid)" />
+                  <path d="M 0 175 Q 110 155 200 180 T 320 165 L 320 220 L 0 220 Z" fill="rgba(0,168,255,0.14)" />
+                  <!-- Hospital Pins -->
+                  <g class="med-pin cursor-pointer" data-hosp="0" transform="translate(88, 72)">
+                    <circle r="12" fill="rgba(16,185,129,0.22)" />
+                    <circle r="6" fill="#10b981" stroke="#fff" stroke-width="1.5" />
+                    <text x="11" y="4" fill="#e2e8f0" font-size="9" font-weight="600">Nexus Central</text>
+                  </g>
+                  <g class="med-pin cursor-pointer" data-hosp="1" transform="translate(215, 138)">
+                    <circle r="12" fill="rgba(0,240,255,0.22)" />
+                    <circle r="6" fill="#00f0ff" stroke="#fff" stroke-width="1.5" />
+                    <text x="-70" y="18" fill="#e2e8f0" font-size="9" font-weight="600">Harborview Trauma</text>
+                  </g>
+                  <g class="med-pin cursor-pointer" data-hosp="2" transform="translate(155, 58)">
+                    <circle r="12" fill="rgba(59,130,246,0.22)" />
+                    <circle r="6" fill="#3b82f6" stroke="#fff" stroke-width="1.5" />
+                    <text x="11" y="4" fill="#e2e8f0" font-size="9" font-weight="600">BioTech Children's</text>
+                  </g>
+                  <g class="med-pin cursor-pointer" data-hosp="3" transform="translate(65, 145)">
+                    <circle r="12" fill="rgba(139,92,246,0.22)" />
+                    <circle r="6" fill="#8b5cf6" stroke="#fff" stroke-width="1.5" />
+                    <text x="11" y="4" fill="#e2e8f0" font-size="9" font-weight="600">Quantum Diagnostics</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div id="hospital-inspector" class="mt-4 rounded-2xl bg-emerald-500/10 border border-emerald-400/25 p-4 text-xs">
+              <div class="font-semibold text-emerald-300" id="hi-name">Nexus Central Medical</div>
+              <p class="text-slate-300 mt-1" id="hi-desc">Level-1 Trauma &amp; Robotic Surgery Hub. 14 ambulances docked, ER wait ~9 min (simulated).</p>
+              <div class="mt-2 flex items-center justify-between text-slate-400">
+                <span id="hi-beds">Bed Occupancy: 71%</span>
+                <span class="text-emerald-400 font-semibold">24/7 Open</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 4: EDUCATION & SMART LEARNING
+           ===================================================================== -->
+      <section id="education" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-nexus-purple">Knowledge &amp; Innovation Ecosystem</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Education &amp; Smart Learning</h2>
+            <p class="mt-2 text-sm text-slate-400 max-w-2xl">Connected schools, colleges, research universities, holographic smart classrooms, and citywide digital learning hubs.</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="edu-tabs">
+            <button type="button" data-edu="all" class="edu-tab active px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-500/25 text-purple-200 border border-purple-400/40 cursor-pointer">All</button>
+            <button type="button" data-edu="Schools" class="edu-tab px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Schools</button>
+            <button type="button" data-edu="Universities" class="edu-tab px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Colleges &amp; Univ.</button>
+            <button type="button" data-edu="Digital" class="edu-tab px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Digital &amp; Smart Labs</button>
+            <button type="button" data-edu="Research" class="edu-tab px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Research</button>
+          </div>
+        </div>
+
+        <!-- Education Metrics -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="nexus-glass rounded-2xl p-5">
+            <div class="text-xs text-slate-400">Digital Literacy Rate</div>
+            <div class="mt-1 text-2xl sm:text-3xl font-bold text-white">99.4%</div>
+            <div class="w-full h-1.5 bg-white/10 rounded-full mt-3 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-nexus-purple to-nexus-cyan rounded-full" style="width: 99.4%"></div>
+            </div>
+          </div>
+          <div class="nexus-glass rounded-2xl p-5">
+            <div class="text-xs text-slate-400">Smart Classrooms</div>
+            <div class="mt-1 text-2xl sm:text-3xl font-bold text-cyan-300">14,200</div>
+            <div class="text-[11px] text-slate-400 mt-2">AR/VR &amp; 6G Fiber Enabled</div>
+          </div>
+          <div class="nexus-glass rounded-2xl p-5">
+            <div class="text-xs text-slate-400">Active Research Labs</div>
+            <div class="mt-1 text-2xl sm:text-3xl font-bold text-purple-300">318</div>
+            <div class="text-[11px] text-slate-400 mt-2">AI, CleanTech &amp; BioMed</div>
+          </div>
+          <div class="nexus-glass rounded-2xl p-5">
+            <div class="text-xs text-slate-400">Student-AI Tutor Ratio</div>
+            <div class="mt-1 text-2xl sm:text-3xl font-bold text-emerald-300">1 : 1</div>
+            <div class="text-[11px] text-slate-400 mt-2">Personalized Learning Mesh</div>
+          </div>
+        </div>
+
+        <!-- Education Institutions Grid -->
+        <div id="edu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 5: PUBLIC SERVICES DASHBOARD
+           ===================================================================== -->
+      <section id="public-services" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-nexus-blue">Autonomous Municipal Utilities</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Public Services Dashboard</h2>
+            <p class="mt-2 text-sm text-slate-400 max-w-2xl">Real-time simulated monitoring of municipal water, smart electricity grid, automated waste, adaptive streetlights, public 6G/Wi-Fi, and air quality.</p>
+          </div>
+          <button type="button" id="open-service-modal" class="btn-cyber-outline px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2 cursor-pointer w-fit">
+            <i data-lucide="file-plus-2" class="w-4 h-4 text-nexus-cyan"></i>
+            Submit Citizen Service Request
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Water Supply -->
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-blue-500/20 text-blue-300"><i data-lucide="droplets" class="w-5 h-5"></i></div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Water Supply Monitoring</h3>
+                  <span class="text-[11px] text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Purity 99.8% • Normal</span>
+                </div>
+              </div>
+              <span class="text-lg font-bold text-white">94%</span>
+            </div>
+            <div class="mt-4 w-full h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" style="width: 94%"></div>
+            </div>
+            <p class="mt-2.5 text-xs text-slate-400">Reservoir capacity optimal. Acoustic leak sensors active across 3,400 km of mains.</p>
+          </div>
+
+          <!-- Electricity Usage -->
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-amber-500/20 text-amber-300"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Smart Electricity Grid</h3>
+                  <span class="text-[11px] text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Balanced Load</span>
+                </div>
+              </div>
+              <span class="text-lg font-bold text-white">2.4 GW</span>
+            </div>
+            <div class="mt-4 w-full h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full" style="width: 68%"></div>
+            </div>
+            <p class="mt-2.5 text-xs text-slate-400">68% of peak capacity. Grid-scale battery reserves at 91% charge.</p>
+          </div>
+
+          <!-- Waste Management -->
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-emerald-500/20 text-emerald-300"><i data-lucide="recycle" class="w-5 h-5"></i></div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Smart Waste Management</h3>
+                  <span class="text-[11px] text-cyan-300 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Pneumatic Tubes Active</span>
+                </div>
+              </div>
+              <span class="text-lg font-bold text-white">78.4%</span>
+            </div>
+            <div class="mt-4 w-full h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-300 rounded-full" style="width: 78.4%"></div>
+            </div>
+            <p class="mt-2.5 text-xs text-slate-400">AI optical sorting diverts 78.4% of waste from landfills into circular recovery.</p>
+          </div>
+
+          <!-- Streetlight Status -->
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-purple-500/20 text-purple-300"><i data-lucide="lamp" class="w-5 h-5"></i></div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Adaptive Streetlights</h3>
+                  <span class="text-[11px] text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 99.6% Online</span>
+                </div>
+              </div>
+              <span class="text-lg font-bold text-white">128k</span>
+            </div>
+            <div class="mt-4 w-full h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full" style="width: 99.6%"></div>
+            </div>
+            <p class="mt-2.5 text-xs text-slate-400">Motion-adaptive LED dimming saves 44% municipal lighting energy nightly.</p>
+          </div>
+
+          <!-- Public Wi-Fi / 6G Coverage -->
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-cyan-500/20 text-cyan-300"><i data-lucide="wifi" class="w-5 h-5"></i></div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Public 6G &amp; Wi-Fi Mesh</h3>
+                  <span class="text-[11px] text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Ultra-Low Latency</span>
+                </div>
+              </div>
+              <span class="text-lg font-bold text-white">98.9%</span>
+            </div>
+            <div class="mt-4 w-full h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" style="width: 98.9%"></div>
+            </div>
+            <p class="mt-2.5 text-xs text-slate-400">Free encrypted gigabit connectivity across parks, plazas, and all transit corridors.</p>
+          </div>
+
+          <!-- Air Quality & Citizen Centers -->
+          <div class="nexus-glass nexus-card-lift rounded-2xl p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-teal-500/20 text-teal-300"><i data-lucide="wind" class="w-5 h-5"></i></div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Air Quality &amp; Citizen Hubs</h3>
+                  <span class="text-[11px] text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> AQI 28 • Good</span>
+                </div>
+              </div>
+              <span class="text-lg font-bold text-emerald-400">24 Hubs</span>
+            </div>
+            <div class="mt-4 w-full h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-emerald-400 to-cyan-300 rounded-full" style="width: 88%"></div>
+            </div>
+            <p class="mt-2.5 text-xs text-slate-400">PM2.5 at 6.1 µg/m³. 24 digital Citizen Service Centers open with avg wait 3 min.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 6: EMERGENCY & SAFETY CENTER (CLEAN, ACCESSIBLE, NO DISTRACTING ANIMATIONS)
+           ===================================================================== -->
+      <section id="safety" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="rounded-3xl bg-[#0c1224] border-2 border-rose-500/45 p-6 sm:p-8 lg:p-10 shadow-2xl">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-lg bg-rose-500/20 text-rose-300 text-xs font-bold tracking-wider uppercase mb-2">Public Safety &amp; Rapid Response</span>
+              <h2 class="text-2xl sm:text-4xl font-bold text-white">Emergency &amp; Safety Center</h2>
+              <p class="mt-1.5 text-sm text-slate-300 max-w-2xl">Clear, direct access to municipal emergency services, police precincts, fire stations, emergency hospitals, and disaster management centers.</p>
+            </div>
+            <div class="rounded-2xl bg-rose-600/20 border border-rose-400/50 px-5 py-3.5 text-left sm:text-right shrink-0">
+              <div class="text-xs uppercase tracking-wider text-rose-200 font-semibold">Immediate Emergency</div>
+              <div class="text-3xl font-extrabold text-white tracking-wider">DIAL 911</div>
+            </div>
+          </div>
+
+          <!-- Quick Access Hotlines -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+            <div class="rounded-2xl bg-[#111930] border border-white/15 p-4 flex items-center justify-between">
+              <div>
+                <div class="text-xs text-slate-400">Police Non-Emergency</div>
+                <div class="text-lg font-bold text-white mt-0.5">311-555-0100</div>
+              </div>
+              <button type="button" data-copy="311-555-0100" class="copy-btn p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white cursor-pointer" aria-label="Copy Police number">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <div class="rounded-2xl bg-[#111930] border border-white/15 p-4 flex items-center justify-between">
+              <div>
+                <div class="text-xs text-slate-400">Fire &amp; Rescue Dispatch</div>
+                <div class="text-lg font-bold text-white mt-0.5">311-555-0199</div>
+              </div>
+              <button type="button" data-copy="311-555-0199" class="copy-btn p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white cursor-pointer" aria-label="Copy Fire number">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <div class="rounded-2xl bg-[#111930] border border-white/15 p-4 flex items-center justify-between">
+              <div>
+                <div class="text-xs text-slate-400">Medical &amp; Poison Control</div>
+                <div class="text-lg font-bold text-white mt-0.5">800-555-0142</div>
+              </div>
+              <button type="button" data-copy="800-555-0142" class="copy-btn p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white cursor-pointer" aria-label="Copy Medical number">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <div class="rounded-2xl bg-[#111930] border border-white/15 p-4 flex items-center justify-between">
+              <div>
+                <div class="text-xs text-slate-400">Disaster Management</div>
+                <div class="text-lg font-bold text-white mt-0.5">800-555-0177</div>
+              </div>
+              <button type="button" data-copy="800-555-0177" class="copy-btn p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white cursor-pointer" aria-label="Copy Disaster Management number">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Emergency Directory Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="rounded-2xl bg-[#090f21] border border-white/10 p-5">
+              <div class="flex items-center gap-2 text-blue-300 font-semibold text-sm">
+                <i data-lucide="shield" class="w-4 h-4"></i> Police Stations
+              </div>
+              <ul class="mt-3 space-y-2 text-xs text-slate-300">
+                <li><strong class="text-white">Central Precinct 1:</strong> 400 Civic Plaza</li>
+                <li><strong class="text-white">Harbor Patrol HQ:</strong> Pier 12 Waterfront</li>
+                <li><strong class="text-white">North Sector Station:</strong> 880 Aurora Ave</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl bg-[#090f21] border border-white/10 p-5">
+              <div class="flex items-center gap-2 text-amber-300 font-semibold text-sm">
+                <i data-lucide="flame" class="w-4 h-4"></i> Fire Stations
+              </div>
+              <ul class="mt-3 space-y-2 text-xs text-slate-300">
+                <li><strong class="text-white">Firehouse #01:</strong> 120 Meridian Blvd</li>
+                <li><strong class="text-white">Harbor Marine Rescue:</strong> Dock 4 South</li>
+                <li><strong class="text-white">High-Rise Drone Unit:</strong> 55 Summit Way</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl bg-[#090f21] border border-white/10 p-5">
+              <div class="flex items-center gap-2 text-emerald-300 font-semibold text-sm">
+                <i data-lucide="heart-pulse" class="w-4 h-4"></i> Emergency Hospitals
+              </div>
+              <ul class="mt-3 space-y-2 text-xs text-slate-300">
+                <li><strong class="text-white">Nexus Central ER:</strong> 100 Health Way</li>
+                <li><strong class="text-white">Harborview Trauma:</strong> 22 Bayfront Rd</li>
+                <li><strong class="text-white">BioTech Pediatric ER:</strong> 710 Science Pk</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl bg-[#090f21] border border-white/10 p-5">
+              <div class="flex items-center gap-2 text-rose-300 font-semibold text-sm">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i> Disaster Management
+              </div>
+              <ul class="mt-3 space-y-2 text-xs text-slate-300">
+                <li><strong class="text-white">Emergency Ops Center:</strong> Civic Bunker B2</li>
+                <li><strong class="text-white">Flood Barrier Control:</strong> Harbor Gate East</li>
+                <li><strong class="text-white">Alert Status:</strong> <span class="text-emerald-400 font-semibold">ALL CLEAR (Normal)</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 7: SMART CITY STATISTICS & ANALYTICS DASHBOARD
+           ===================================================================== -->
+      <section id="statistics" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-nexus-cyan">Metropolitan Telemetry &amp; KPIs</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Smart City Statistics</h2>
+            <p class="mt-2 text-sm text-slate-400 max-w-2xl">Interactive analytics across population, area, daily commuters, transit adoption, air quality, energy, water, and recycling.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-[11px] font-semibold">SIMULATED TELEMETRY — SAMPLE DATASET</span>
+            <div class="inline-flex rounded-xl bg-white/5 border border-white/10 p-1" id="stats-timeframe">
+              <button type="button" data-tf="24h" class="tf-btn active px-3 py-1 rounded-lg text-xs font-semibold bg-cyan-500/25 text-cyan-200 cursor-pointer">24H</button>
+              <button type="button" data-tf="7d" class="tf-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer">7D</button>
+              <button type="button" data-tf="30d" class="tf-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer">30D</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Circular Progress Indicators + Key Metrics -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="nexus-glass rounded-2xl p-5 flex items-center gap-4">
+            <svg class="w-16 h-16 shrink-0 -rotate-90" viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="6"></circle>
+              <circle cx="32" cy="32" r="26" fill="none" stroke="#10b981" stroke-width="6" stroke-dasharray="163.36" stroke-dashoffset="25.1" stroke-linecap="round"></circle>
+            </svg>
+            <div>
+              <div class="text-xs text-slate-400">Renewable Energy</div>
+              <div class="text-2xl font-bold text-white">84.6%</div>
+              <div class="text-[11px] text-emerald-400">Target: 90% by 2028</div>
+            </div>
+          </div>
+
+          <div class="nexus-glass rounded-2xl p-5 flex items-center gap-4">
+            <svg class="w-16 h-16 shrink-0 -rotate-90" viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="6"></circle>
+              <circle cx="32" cy="32" r="26" fill="none" stroke="#00f0ff" stroke-width="6" stroke-dasharray="163.36" stroke-dashoffset="42.4" stroke-linecap="round"></circle>
+            </svg>
+            <div>
+              <div class="text-xs text-slate-400">Public Transit Usage</div>
+              <div class="text-2xl font-bold text-white">74.0%</div>
+              <div class="text-[11px] text-cyan-300">2.14M Daily Commuters</div>
+            </div>
+          </div>
+
+          <div class="nexus-glass rounded-2xl p-5 flex items-center gap-4">
+            <svg class="w-16 h-16 shrink-0 -rotate-90" viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="6"></circle>
+              <circle cx="32" cy="32" r="26" fill="none" stroke="#8b5cf6" stroke-width="6" stroke-dasharray="163.36" stroke-dashoffset="35.3" stroke-linecap="round"></circle>
+            </svg>
+            <div>
+              <div class="text-xs text-slate-400">Waste Recycling</div>
+              <div class="text-2xl font-bold text-white">78.4%</div>
+              <div class="text-[11px] text-purple-300">Circular Recovery</div>
+            </div>
+          </div>
+
+          <div class="nexus-glass rounded-2xl p-5 flex items-center gap-4">
+            <svg class="w-16 h-16 shrink-0 -rotate-90" viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="6"></circle>
+              <circle cx="32" cy="32" r="26" fill="none" stroke="#00a8ff" stroke-width="6" stroke-dasharray="163.36" stroke-dashoffset="18" stroke-linecap="round"></circle>
+            </svg>
+            <div>
+              <div class="text-xs text-slate-400">Air Quality (AQI)</div>
+              <div class="text-2xl font-bold text-emerald-400">28</div>
+              <div class="text-[11px] text-slate-400">642 km² • 118 L/day H₂O</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Chart.js Visualizations -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-7 nexus-glass rounded-3xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-white">Renewable Generation vs. City Energy Demand (GW)</h3>
+              <span class="text-[11px] text-slate-400">Simulated Curve</span>
+            </div>
+            <div class="relative h-64 sm:h-72 w-full">
+              <canvas id="energy-line-chart"></canvas>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 nexus-glass rounded-3xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-white">Daily Commuter Modal Split (Thousands)</h3>
+              <span class="text-[11px] text-slate-400">Sample Data</span>
+            </div>
+            <div class="relative h-64 sm:h-72 w-full">
+              <canvas id="commuter-bar-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 8: IMPORTANT CITY LOCATIONS (INTERACTIVE CITY MAP)
+           ===================================================================== -->
+      <section id="locations" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-nexus-cyan">Interactive Spatial Directory</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Important City Locations</h2>
+            <p class="mt-2 text-sm text-slate-400 max-w-2xl">Explore landmarks, civic hubs, hospitals, universities, transit terminals, parks, and Harborlux Summit Tower. Click any marker for details.</p>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap gap-2 mb-6" id="map-category-filters">
+          <button type="button" data-cat="all" class="map-cat-btn active px-3 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/25 text-cyan-200 border border-cyan-400/50 cursor-pointer">All Locations</button>
+          <button type="button" data-cat="Landmark" class="map-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Attractions &amp; Towers</button>
+          <button type="button" data-cat="Civic" class="map-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">City Hall &amp; Safety</button>
+          <button type="button" data-cat="Hospital" class="map-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Hospitals</button>
+          <button type="button" data-cat="Education" class="map-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Universities</button>
+          <button type="button" data-cat="Transit" class="map-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Metro &amp; Airport</button>
+          <button type="button" data-cat="Culture" class="map-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Parks, Museums &amp; Malls</button>
+        </div>
+
+        <div class="nexus-glass rounded-3xl p-4 sm:p-6 relative">
+          <div class="relative w-full h-[400px] sm:h-[460px] rounded-2xl overflow-hidden bg-[#040918] border border-cyan-500/20">
+            <!-- Custom Interactive SVG Nexus City Grid Map -->
+            <svg id="city-locations-svg" viewBox="0 0 900 480" class="w-full h-full select-none">
+              <defs>
+                <pattern id="cityGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,240,255,0.08)" stroke-width="1"/>
+                </pattern>
+                <linearGradient id="harborWater" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#071a38"/>
+                  <stop offset="100%" stop-color="#030b1c"/>
+                </linearGradient>
+              </defs>
+              <rect width="900" height="480" fill="url(#cityGrid)" />
+              <!-- Harbour Bay -->
+              <path d="M 0 340 Q 220 300 440 350 T 900 315 L 900 480 L 0 480 Z" fill="url(#harborWater)" stroke="rgba(0,240,255,0.28)" stroke-width="1.5"/>
+              <!-- Major Expressways & Metro Lines -->
+              <path d="M 40 120 L 860 120 M 40 240 L 860 240 M 220 30 L 220 330 M 520 30 L 520 345 M 730 30 L 730 325" stroke="rgba(0,168,255,0.22)" stroke-width="2.5" fill="none"/>
+              <path d="M 90 80 Q 320 180 520 180 T 820 260" stroke="rgba(139,92,246,0.45)" stroke-width="3" stroke-dasharray="8 6" fill="none"/>
+              <text x="26" y="452" fill="rgba(0,240,255,0.45)" font-size="13" font-weight="600" letter-spacing="4">NEXUS HARBOUR BAY</text>
+              <!-- Markers Layer populated by JS -->
+              <g id="city-markers-group"></g>
+            </svg>
+
+            <!-- Modern Glass Information Popup -->
+            <div id="location-popup" class="hidden absolute bottom-4 left-4 right-4 sm:left-auto sm:right-5 sm:bottom-5 sm:w-80 rounded-2xl bg-[#091128]/92 backdrop-blur-xl border border-cyan-400/40 p-5 shadow-2xl z-20">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span id="loc-cat" class="inline-block px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300">Landmark</span>
+                  <h3 id="loc-name" class="mt-1 text-base font-bold text-white">Harborlux Summit Tower</h3>
+                </div>
+                <button type="button" id="close-loc-popup" class="p-1 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white cursor-pointer" aria-label="Close location details">
+                  <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <p id="loc-desc" class="mt-2 text-xs text-slate-300 leading-relaxed"></p>
+              <div id="loc-info" class="mt-3 text-[11px] text-emerald-400 font-medium"></div>
+              <button type="button" id="loc-route-btn" class="mt-4 w-full btn-cyber py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                Set as Route Destination
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 9: SUSTAINABILITY & GREEN CITY
+           ===================================================================== -->
+      <section id="sustainability" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="nexus-glass rounded-3xl p-6 sm:p-10 border border-emerald-400/25 relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5">
+              <span class="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400">Net-Zero 2030 Initiative</span>
+              <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Sustainability &amp; Green City</h2>
+              <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                NEXUS CITY pairs offshore wind farms, photovoltaic skyscraper facades, vertical urban forests, and closed-loop water recycling to achieve a 64% carbon reduction since 2020.
+              </p>
+
+              <!-- Animated Eco Illustration (Wind Turbines + Swaying Urban Forest) -->
+              <div class="mt-6 rounded-2xl bg-[#041418] border border-emerald-500/25 p-4">
+                <svg viewBox="0 0 360 150" class="w-full h-36">
+                  <!-- Energy Flow Line -->
+                  <path d="M 10 125 L 350 125" stroke="rgba(16,185,129,0.35)" stroke-width="2" />
+                  <!-- Wind Turbine 1 -->
+                  <g transform="translate(75, 55)">
+                    <line x1="0" y1="0" x2="0" y2="70" stroke="#94a3b8" stroke-width="3" />
+                    <g class="turbine-spin">
+                      <path d="M0 0 L-3 -32 L3 -32 Z" fill="#34d399" />
+                      <path d="M0 0 L28 16 L24 21 Z" fill="#34d399" />
+                      <path d="M0 0 L-28 16 L-24 21 Z" fill="#34d399" />
+                      <circle r="4" fill="#ecfdf5" />
+                    </g>
+                  </g>
+                  <!-- Wind Turbine 2 -->
+                  <g transform="translate(145, 72)">
+                    <line x1="0" y1="0" x2="0" y2="53" stroke="#94a3b8" stroke-width="2.5" />
+                    <g class="turbine-spin" style="animation-duration: 5.5s;">
+                      <path d="M0 0 L-2.5 -24 L2.5 -24 Z" fill="#00f0ff" />
+                      <path d="M0 0 L21 12 L18 16 Z" fill="#00f0ff" />
+                      <path d="M0 0 L-21 12 L-18 16 Z" fill="#00f0ff" />
+                      <circle r="3" fill="#ecfdf5" />
+                    </g>
+                  </g>
+                  <!-- Swaying Urban Forest Trees -->
+                  <g class="tree-sway" transform="translate(230, 125)">
+                    <rect x="-3" y="-26" width="6" height="26" fill="#065f46" />
+                    <circle cx="0" cy="-38" r="18" fill="#10b981" opacity="0.85" />
+                  </g>
+                  <g class="tree-sway" style="animation-delay: -1.5s;" transform="translate(270, 125)">
+                    <rect x="-3.5" y="-34" width="7" height="34" fill="#065f46" />
+                    <circle cx="0" cy="-48" r="22" fill="#34d399" opacity="0.8" />
+                  </g>
+                  <g class="tree-sway" style="animation-delay: -3s;" transform="translate(310, 125)">
+                    <rect x="-3" y="-22" width="6" height="22" fill="#065f46" />
+                    <circle cx="0" cy="-32" r="15" fill="#059669" opacity="0.9" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="rounded-2xl bg-white/5 border border-emerald-400/20 p-4">
+                <div class="flex items-center gap-2 text-emerald-300 font-semibold text-sm"><i data-lucide="sun" class="w-4 h-4"></i> Solar Energy</div>
+                <div class="mt-1 text-2xl font-bold text-white">1,420 MW</div>
+                <p class="text-xs text-slate-400 mt-1">Integrated solar glass on 6,800 towers including Harborlux.</p>
+              </div>
+              <div class="rounded-2xl bg-white/5 border border-cyan-400/20 p-4">
+                <div class="flex items-center gap-2 text-cyan-300 font-semibold text-sm"><i data-lucide="wind" class="w-4 h-4"></i> Offshore Wind</div>
+                <div class="mt-1 text-2xl font-bold text-white">980 MW</div>
+                <p class="text-xs text-slate-400 mt-1">64 deep-water turbines supplying continuous coastal baseload.</p>
+              </div>
+              <div class="rounded-2xl bg-white/5 border border-emerald-400/20 p-4">
+                <div class="flex items-center gap-2 text-emerald-300 font-semibold text-sm"><i data-lucide="trees" class="w-4 h-4"></i> Urban Forests</div>
+                <div class="mt-1 text-2xl font-bold text-white">1.2M Trees</div>
+                <p class="text-xs text-slate-400 mt-1">Sky-gardens &amp; green corridors lowering urban heat by 3.2°C.</p>
+              </div>
+              <div class="rounded-2xl bg-white/5 border border-teal-400/20 p-4">
+                <div class="flex items-center gap-2 text-teal-300 font-semibold text-sm"><i data-lucide="leaf" class="w-4 h-4"></i> Carbon Reduction</div>
+                <div class="mt-1 text-2xl font-bold text-emerald-400">-64.2% CO₂</div>
+                <p class="text-xs text-slate-400 mt-1">Verified LEED Platinum buildings &amp; 92% greywater reuse.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 10: SMART CITY NEWS & UPDATES
+           ===================================================================== -->
+      <section id="news" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-up">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-nexus-blue">Civic Broadcasts</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white">Smart City News &amp; Updates</h2>
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="news-filters">
+            <button type="button" data-news="all" class="news-filter active px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/25 text-cyan-200 border border-cyan-400/40 cursor-pointer">All</button>
+            <button type="button" data-news="Development" class="news-filter px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Development</button>
+            <button type="button" data-news="Transportation" class="news-filter px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Transportation</button>
+            <button type="button" data-news="Environment" class="news-filter px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 cursor-pointer">Environment</button>
+          </div>
+        </div>
+
+        <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+    </main>
+
+    <!-- =======================================================================
+         SECTION 11: PREMIUM FOOTER
+         ======================================================================= -->
+    <footer id="footer" class="relative z-10 border-t border-white/10 bg-[#040712]/95 pt-16 pb-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <!-- Brand -->
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-nexus-blue to-nexus-purple flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <span class="block text-sm font-bold tracking-[0.22em] text-white">NEXUS CITY × HARBORLUX</span>
+              <span class="block text-[10px] tracking-widest text-cyan-300/70 uppercase">Smart Urban Command &amp; Luxury Residences</span>
+            </div>
+          </div>
+          <p class="mt-4 text-xs text-slate-400 leading-relaxed">
+            A next-generation metropolitan digital portal uniting Harborlux waterfront penthouses with NEXUS CITY's intelligent mobility, healthcare, education, and sustainability networks.
+          </p>
+          <div class="mt-5 flex items-center gap-3">
+            <a href="#footer" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-cyan-300 transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="#footer" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-cyan-300 transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#footer" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-cyan-300 transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-4 h-4"></i></a>
+            <a href="#footer" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-cyan-300 transition-colors" aria-label="Globe"><i data-lucide="globe" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="lg:col-span-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Navigation</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li><a href="#harborlux-hero" class="hover:text-cyan-300 transition-colors">Harborlux Summit</a></li>
+            <li><a href="#nexus-home" class="hover:text-cyan-300 transition-colors">City Overview</a></li>
+            <li><a href="#transportation" class="hover:text-cyan-300 transition-colors">Transportation</a></li>
+            <li><a href="#healthcare" class="hover:text-cyan-300 transition-colors">Healthcare</a></li>
+            <li><a href="#education" class="hover:text-cyan-300 transition-colors">Education</a></li>
+          </ul>
+        </div>
+
+        <!-- City Services -->
+        <div class="lg:col-span-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">City Services</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li><a href="#public-services" class="hover:text-cyan-300 transition-colors">Utilities &amp; Wi-Fi</a></li>
+            <li><a href="#safety" class="hover:text-cyan-300 transition-colors">Emergency Center</a></li>
+            <li><a href="#statistics" class="hover:text-cyan-300 transition-colors">City Telemetry</a></li>
+            <li><a href="#locations" class="hover:text-cyan-300 transition-colors">Interactive Map</a></li>
+            <li><a href="#sustainability" class="hover:text-cyan-300 transition-colors">Green City</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="lg:col-span-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Civic &amp; Harborlux Briefing</h4>
+          <p class="text-xs text-slate-400 mb-3">Subscribe for municipal infrastructure updates, sustainability reports, and private Harborlux penthouse releases.</p>
+          <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2">
+            <input
+              type="email"
+              id="newsletter-email"
+              required
+              placeholder="Enter your email address"
+              class="flex-1 rounded-xl bg-white/5 border border-white/15 px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-nexus-cyan"
+            />
+            <button type="submit" class="btn-cyber px-4 py-2.5 rounded-xl text-xs shrink-0 cursor-pointer">Subscribe</button>
+          </form>
+          <div class="mt-4 text-[11px] text-slate-500">
+            Support Desk: <span class="text-slate-300">concierge@harborlux-nexus.city</span> • 24/7 Civic Line: <span class="text-slate-300">311</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+        <span>© 2026 Harborlux Residences × NEXUS CITY Digital Twin. All telemetry figures are simulated sample datasets.</span>
+        <span>Built with Precision Web Animations, Canvas &amp; Chart.js</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =========================================================================
+       INTERACTIVE MODALS & TOAST NOTIFICATIONS (NO alert() OR confirm())
+       ========================================================================= -->
+  <!-- Harborlux Enquire Modal -->
+  <div id="enquire-modal" class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-md rounded-3xl bg-[#100d29] border border-harbor-pink/35 p-6 sm:p-8 shadow-2xl relative">
+      <button type="button" class="close-modal absolute top-4 right-4 p-2 rounded-xl hover:bg-white/10 text-slate-400 hover:text-white cursor-pointer" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <span class="text-[11px] font-semibold tracking-[0.25em] uppercase text-harbor-pink">HARBORLUX PRIVATE OFFICE</span>
+      <h3 class="mt-1 text-2xl font-bold text-white">Claim Your Summit</h3>
+      <p class="mt-2 text-xs text-slate-300">Request a private helicopter viewing or architectural dossier for Harborlux penthouses overlooking NEXUS Harbour.</p>
+      <form id="enquire-form" class="mt-5 space-y-3.5">
+        <input type="text" required placeholder="Full Name" class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-harbor-pink" />
+        <input type="email" required placeholder="Private Email" class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-harbor-pink" />
+        <select class="w-full rounded-xl bg-[#181338] border border-white/15 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-harbor-pink">
+          <option>Skyline Penthouse (Floors 82–88)</option>
+          <option>Crown Duplex Residence (Floor 90)</option>
+          <option>NEXUS Smart City Enterprise Tour</option>
+        </select>
+        <button type="submit" class="w-full py-3 rounded-full bg-harbor-pink hover:bg-harbor-pinkHover text-harbor-ink font-semibold text-sm transition-colors cursor-pointer">
+          Request Private Viewing
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Citizen Service Request Modal -->
+  <div id="service-modal" class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-md rounded-3xl bg-[#091026] border border-cyan-400/35 p-6 sm:p-8 shadow-2xl relative">
+      <button type="button" class="close-modal absolute top-4 right-4 p-2 rounded-xl hover:bg-white/10 text-slate-400 hover:text-white cursor-pointer" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <span class="text-[11px] font-semibold tracking-[0.2em] uppercase text-nexus-cyan">NEXUS 311 PORTAL</span>
+      <h3 class="mt-1 text-xl font-bold text-white">Submit Citizen Service Request</h3>
+      <form id="service-request-form" class="mt-4 space-y-3.5">
+        <select class="w-full rounded-xl bg-[#0d1633] border border-white/15 px-3.5 py-2.5 text-sm text-white">
+          <option>Smart Streetlight Maintenance</option>
+          <option>EV Charger / Bike Dock Issue</option>
+          <option>Water Sensor / Leak Check</option>
+          <option>Public 6G Wi-Fi Signal Report</option>
+        </select>
+        <input type="text" required placeholder="District or Street Address" class="w-full rounded-xl bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm text-white placeholder-slate-400" />
+        <textarea rows="3" required placeholder="Describe the issue..." class="w-full rounded-xl bg-white/5 border border-white/15 px-3.5 py-2.5 text-sm text-white placeholder-slate-400"></textarea>
+        <button type="submit" class="w-full btn-cyber py-2.5 rounded-xl text-sm cursor-pointer">Dispatch Municipal Ticket</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- News Article Reader Modal -->
+  <div id="news-modal" class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-lg rounded-3xl bg-[#091026] border border-cyan-400/35 p-6 sm:p-8 shadow-2xl relative">
+      <button type="button" class="close-modal absolute top-4 right-4 p-2 rounded-xl hover:bg-white/10 text-slate-400 hover:text-white cursor-pointer" aria-label="Close article">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <span id="nm-cat" class="inline-block px-2.5 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-[11px] font-semibold uppercase">Development</span>
+      <h3 id="nm-title" class="mt-3 text-xl sm:text-2xl font-bold text-white"></h3>
+      <div id="nm-date" class="mt-1 text-xs text-slate-400"></div>
+      <p id="nm-body" class="mt-4 text-sm text-slate-300 leading-relaxed"></p>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-box" class="fixed bottom-5 right-5 z-[110] hidden max-w-sm rounded-2xl bg-[#0c1630]/95 backdrop-blur-xl border border-cyan-400/40 px-4 py-3 shadow-2xl text-xs text-white flex items-center gap-2.5">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+    <span id="toast-msg">Action completed.</span>
+  </div>
+
+  <!-- =========================================================================
+       COMPLETE APPLICATION SCRIPT
+       ========================================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* -----------------------------------------------------------------------
+         UTILITIES: Toast & Safe Clipboard Copy
+         ----------------------------------------------------------------------- */
+      let toastTimer = null;
+      function showToast(message) {
+        const box = document.getElementById('toast-box');
+        const msg = document.getElementById('toast-msg');
+        if (!box || !msg) return;
+        msg.textContent = message;
+        box.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => box.classList.add('hidden'), 3400);
+      }
+
+      function copyText(text) {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          showToast('Copied ' + text + ' to clipboard');
+        } catch (err) {
+          showToast('Number: ' + text);
+        }
+      }
+
+      /* -----------------------------------------------------------------------
+         PART A: HARBORLUX "CLAIM YOUR SUMMIT" STAGE, HEADLINE, TIMELINE & RAIN
+         ----------------------------------------------------------------------- */
+      const heroEl = document.getElementById('harborlux-hero');
+      const stageEl = document.getElementById('hl-stage');
+      const navEl = document.getElementById('hl-nav');
+      const backEl = document.getElementById('hl-back');
+      const midEl = document.getElementById('hl-mid');
+      const frontEl = document.getElementById('hl-front');
+      const topShadeEl = document.getElementById('hl-top-shade');
+      const headlineEl = document.getElementById('hl-headline');
+      const kickerEl = document.getElementById('hl-kicker');
+      const wordEl = document.getElementById('hl-word');
+      const letterEls = Array.from(document.querySelectorAll('#hl-word .hl-letter'));
+      const openingEl = document.getElementById('hl-opening');
+      const doorsEl = document.getElementById('hl-doors');
+      const doorLeftEl = document.getElementById('hl-door-left');
+      const doorRightEl = document.getElementById('hl-door-right');
+      const tiltVideo = document.getElementById('hl-tilt-video');
+      const rainA = document.getElementById('hl-rain-a');
+      const rainB = document.getElementById('hl-rain-b');
+      const bottomCtaEl = document.getElementById('hl-bottom-cta');
+
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Measure "Summit" width at 100px for exact font-size scaling
+      let summitWidthPerEm = 3.22; // fallback before font load
+      function measureSummitWidthPerEm() {
+        try {
+          const probe = document.createElement('span');
+          probe.textContent = 'Summit';
+          probe.style.cssText = 'position:fixed;visibility:hidden;pointer-events:none;font-family:Inter,sans-serif;font-weight:700;letter-spacing:-0.045em;font-size:100px;line-height:1;white-space:nowrap;';
+          document.body.appendChild(probe);
+          const w = probe.getBoundingClientRect().width;
+          document.body.removeChild(probe);
+          if (w > 50) summitWidthPerEm = w / 100;
+        } catch (e) {}
+      }
+
+      function layoutHarborluxStage() {
+        if (!heroEl || !stageEl) return;
+        const heroW = heroEl.clientWidth;
+        const heroH = heroEl.clientHeight;
+
+        // Unit u: min(vw/1440, vh/900), or 1px below 820px wide
+        const u = heroW < 820 ? 1 : Math.min(heroW / 1440, heroH / 900);
+        document.documentElement.style.setProperty('--hl-u', u + 'px');
+
+        // 16:9 Stage covering hero
+        const stageW = Math.max(heroW, heroH * (16 / 9));
+        const stageH = stageW * (9 / 16);
+        stageEl.style.width = stageW + 'px';
+        stageEl.style.height = stageH + 'px';
+
+        // Headline placement & exact size calculation
+        const isPortrait = heroH > 1.2 * heroW;
+        const baselineY = stageH * (isPortrait ? 0.362 : 0.43);
+        const stageTopInHero = (heroH - stageH) / 2;
+
+        const navRect = navEl ? navEl.getBoundingClientRect() : { bottom: 100 };
+        const heroRect = heroEl.getBoundingClientRect();
+        const navBottomInHero = Math.max(0, navRect.bottom - heroRect.top);
+        const navBottomInStage = navBottomInHero - stageTopInHero;
+
+        const sizeA = (0.625 * stageW) / summitWidthPerEm;
+        const sizeB = (0.92 * heroW) / summitWidthPerEm;
+        const availH = Math.max(48, baselineY - (navBottomInStage + 0.035 * heroH));
+        const sizeC = availH / 0.88;
+
+        const wordSize = Math.max(36, Math.min(sizeA, sizeB, sizeC));
+        wordEl.style.fontSize = wordSize + 'px';
+        // Inter baseline sits at ~0.86em from top of line-height:1 box
+        wordEl.style.top = (baselineY - 0.86 * wordSize) + 'px';
+
+        // Kicker: 0.118 * wordSize, top = baseline - 0.727em - 0.02em, shifted 0.1em left of center
+        const kickerSize = 0.118 * wordSize;
+        kickerEl.style.fontSize = kickerSize + 'px';
+        kickerEl.style.top = (baselineY - 0.727 * wordSize - 0.02 * wordSize) + 'px';
+        kickerEl.style.transform = `translateX(calc(-50% - ${0.1 * wordSize}px))`;
+      }
+
+      // Dual-video seamless 3.6s rain crossfade loop
+      let rainStarted = false;
+      let activeRain = null;
+      let standbyRain = null;
+      let rainSwapping = false;
+
+      function startRainLoop() {
+        if (rainStarted || prefersReducedMotion) return;
+        rainStarted = true;
+        activeRain = rainA;
+        standbyRain = rainB;
+
+        const handleTimeUpdate = function () {
+          if (this !== activeRain || rainSwapping) return;
+          if (this.currentTime >= 3.6 - 0.75) {
+            rainSwapping = true;
+            const outgoing = activeRain;
+            const incoming = standbyRain;
+            incoming.currentTime = 0;
+            const playPromise = incoming.play();
+            if (playPromise && playPromise.catch) playPromise.catch(() => {});
+            incoming.classList.add('is-on');
+            outgoing.classList.remove('is-on');
+
+            activeRain = incoming;
+            standbyRain = outgoing;
+
+            setTimeout(() => {
+              try { outgoing.pause(); } catch (e) {}
+              rainSwapping = false;
+            }, 800);
+          }
+        };
+
+        rainA.addEventListener('timeupdate', handleTimeUpdate);
+        rainB.addEventListener('timeupdate', handleTimeUpdate);
+
+        activeRain.currentTime = 0;
+        activeRain.classList.add('is-on');
+        const p = activeRain.play();
+        if (p && p.catch) p.catch(() => {});
+      }
+
+      // Master 7.4s Web Animations API Intro Controller
+      const DURATION = 7400;
+      let introAnims = [];
+      let introRafId = null;
+
+      function clearIntroAnimations() {
+        if (introRafId) cancelAnimationFrame(introRafId);
+        introAnims.forEach(a => { try { a.cancel(); } catch (e) {} });
+        introAnims = [];
+      }
+
+      function applyReducedMotionFinalState() {
+        clearIntroAnimations();
+        heroEl.classList.remove('intro');
+        openingEl.style.display = 'none';
+        doorsEl.style.display = 'none';
+        navEl.style.opacity = '1';
+        topShadeEl.style.opacity = '1';
+        frontEl.style.transform = 'translateY(0)';
+        kickerEl.style.opacity = '1';
+        letterEls.forEach(el => { el.style.opacity = '1'; });
+        bottomCtaEl.classList.add('visible');
+      }
+
+      function runCinematicIntro() {
+        if (prefersReducedMotion) {
+          applyReducedMotionFinalState();
+          return;
+        }
+
+        clearIntroAnimations();
+        heroEl.classList.add('intro');
+        openingEl.style.display = 'block';
+        openingEl.style.opacity = '1';
+        doorsEl.style.display = 'flex';
+        bottomCtaEl.classList.remove('visible');
+
+        const o = (ms) => ms / DURATION;
+
+        function makeAnim(el, keyframes) {
+          const anim = el.animate(keyframes, {
+            duration: DURATION,
+            fill: 'both',
+            easing: 'linear'
+          });
+          anim.pause();
+          anim.currentTime = 0;
+          introAnims.push(anim);
+          return anim;
+        }
+
+        // 0.02 -> 1.13s Left door
+        makeAnim(doorLeftEl, [
+          { offset: 0, transform: 'translateX(0%)' },
+          { offset: o(20), transform: 'translateX(0%)', easing: 'cubic-bezier(.1,.2,.8,1)' },
+          { offset: o(1130), transform: 'translateX(-101%)' },
+          { offset: 1, transform: 'translateX(-101%)' }
+        ]);
+
+        // 0.02 -> 1.24s Right door
+        makeAnim(doorRightEl, [
+          { offset: 0, transform: 'translateX(0%)' },
+          { offset: o(20), transform: 'translateX(0%)', easing: 'cubic-bezier(.4,.6,.9,1)' },
+          { offset: o(1240), transform: 'translateX(101%)' },
+          { offset: 1, transform: 'translateX(101%)' }
+        ]);
+
+        // 1.19 -> 1.47s Tilt video fade-in
+        makeAnim(tiltVideo, [
+          { offset: 0, opacity: 0 },
+          { offset: o(1190), opacity: 0, easing: 'ease-in-out' },
+          { offset: o(1470), opacity: 1 },
+          { offset: 1, opacity: 1 }
+        ]);
+
+        // 2.45 -> 2.95s Opening box fade-out
+        makeAnim(openingEl, [
+          { offset: 0, opacity: 1 },
+          { offset: o(2450), opacity: 1, easing: 'cubic-bezier(.45,0,.55,1)' },
+          { offset: o(2950), opacity: 0 },
+          { offset: 1, opacity: 0 }
+        ]);
+
+        // 2.45 -> 2.75s Nav fade-in
+        makeAnim(navEl, [
+          { offset: 0, opacity: 0, transform: 'translateY(-6px)' },
+          { offset: o(2450), opacity: 0, transform: 'translateY(-6px)', easing: 'ease-out' },
+          { offset: o(2750), opacity: 1, transform: 'translateY(0px)' },
+          { offset: 1, opacity: 1, transform: 'translateY(0px)' }
+        ]);
+
+        // 2.45 -> 3.10s Kicker reveal (preserving X offset via margin-top or nested transform)
+        const baseKickerTransform = kickerEl.style.transform || 'translateX(-50%)';
+        makeAnim(kickerEl, [
+          { offset: 0, opacity: 0, transform: baseKickerTransform + ' translateY(0.5em)' },
+          { offset: o(2450), opacity: 0, transform: baseKickerTransform + ' translateY(0.5em)', easing: 'cubic-bezier(.2,.65,.3,1)' },
+          { offset: o(3100), opacity: 1, transform: baseKickerTransform + ' translateY(0em)' },
+          { offset: 1, opacity: 1, transform: baseKickerTransform + ' translateY(0em)' }
+        ]);
+
+        // 2.45 + i * 0.054 -> +0.70s Letters S, u, m, m, i, t
+        letterEls.forEach((letter, i) => {
+          const start = 2450 + i * 54;
+          const end = start + 700;
+          makeAnim(letter, [
+            { offset: 0, opacity: 0, transform: 'translateY(0.14em)' },
+            { offset: o(start), opacity: 0, transform: 'translateY(0.14em)', easing: 'cubic-bezier(.2,.65,.3,1)' },
+            { offset: o(end), opacity: 1, transform: 'translateY(0em)' },
+            { offset: 1, opacity: 1, transform: 'translateY(0em)' }
+          ]);
+        });
+
+        // 2.90 -> 3.70s Top shade
+        makeAnim(topShadeEl, [
+          { offset: 0, opacity: 0 },
+          { offset: o(2900), opacity: 0, easing: 'ease-in-out' },
+          { offset: o(3700), opacity: 1 },
+          { offset: 1, opacity: 1 }
+        ]);
+
+        // 2.90 -> 4.30s Back layer
+        makeAnim(backEl, [
+          { offset: 0, transform: 'translateY(0%)' },
+          { offset: o(2900), transform: 'translateY(0%)', easing: 'cubic-bezier(.45,0,.35,1)' },
+          { offset: o(4300), transform: 'translateY(-1.5%)' },
+          { offset: 1, transform: 'translateY(-1.5%)' }
+        ]);
+
+        // 2.90 -> 4.30s -> 4.60s -> 6.90s Mid layer
+        makeAnim(midEl, [
+          { offset: 0, transform: 'translateY(0%)' },
+          { offset: o(2900), transform: 'translateY(0%)', easing: 'cubic-bezier(.45,0,.3,1)' },
+          { offset: o(4300), transform: 'translateY(-4%)' },
+          { offset: o(4600), transform: 'translateY(-4%)', easing: 'cubic-bezier(.45,0,.55,1)' },
+          { offset: o(6900), transform: 'translateY(0%)' },
+          { offset: 1, transform: 'translateY(0%)' }
+        ]);
+
+        // 3.00 -> 4.80s Headline block drift
+        makeAnim(headlineEl, [
+          { offset: 0, transform: 'translateY(6%)' },
+          { offset: o(3000), transform: 'translateY(6%)', easing: 'cubic-bezier(.3,0,.4,1)' },
+          { offset: o(4800), transform: 'translateY(0%)' },
+          { offset: 1, transform: 'translateY(0%)' }
+        ]);
+
+        // 3.35 -> 6.00 -> 7.30s Front layer rise + settle
+        makeAnim(frontEl, [
+          { offset: 0, transform: 'translateY(66%)' },
+          { offset: o(3350), transform: 'translateY(66%)', easing: 'cubic-bezier(.2,.5,.2,1)' },
+          { offset: o(6000), transform: 'translateY(-2.5%)', easing: 'cubic-bezier(.45,0,.55,1)' },
+          { offset: o(7300), transform: 'translateY(0%)' },
+          { offset: 1, transform: 'translateY(0%)' }
+        ]);
+
+        // Reset tilt video
+        try {
+          tiltVideo.pause();
+          tiltVideo.currentTime = 0;
+        } catch (e) {}
+
+        const clipLen = (tiltVideo.duration && isFinite(tiltVideo.duration)) ? tiltVideo.duration : 5.04;
+        const baseRate = clipLen / 1.6;
+        let tiltPlaying = false;
+        let tiltDone = false;
+        let rainTriggered = false;
+        let ctaShown = false;
+
+        const startTime = performance.now();
+
+        function tick(now) {
+          const elapsed = Math.min(DURATION, now - startTime);
+
+          for (let i = 0; i < introAnims.length; i++) {
+            introAnims[i].currentTime = elapsed;
+          }
+
+          // Tilt video playback sync (1.25s -> 2.85s)
+          if (elapsed >= 1250 && elapsed <= 2850) {
+            if (!tiltPlaying) {
+              tiltPlaying = true;
+              try {
+                tiltVideo.playbackRate = baseRate;
+                const p = tiltVideo.play();
+                if (p && p.catch) p.catch(() => {});
+              } catch (e) {}
+            } else if (!tiltVideo.paused) {
+              const target = ((elapsed - 1250) / 1600) * clipLen;
+              const diff = target - tiltVideo.currentTime;
+              const nudged = baseRate + diff * 1.4;
+              const clamped = Math.max(baseRate * 0.85, Math.min(baseRate * 1.2, nudged));
+              try { tiltVideo.playbackRate = clamped; } catch (e) {}
+            }
+          } else if (elapsed > 2850 && !tiltDone) {
+            tiltDone = true;
+            try {
+              tiltVideo.pause();
+              if (isFinite(tiltVideo.duration)) {
+                tiltVideo.currentTime = Math.max(0, tiltVideo.duration - 0.04);
+              }
+            } catch (e) {}
+          }
+
+          // Rain starts at 2.40s
+          if (elapsed >= 2400 && !rainTriggered) {
+            rainTriggered = true;
+            startRainLoop();
+          }
+
+          // Fade in unobtrusive bottom CTA after 6.5s
+          if (elapsed >= 6500 && !ctaShown) {
+            ctaShown = true;
+            bottomCtaEl.classList.add('visible');
+          }
+
+          if (elapsed < DURATION) {
+            introRafId = requestAnimationFrame(tick);
+          } else {
+            // 7.4s Complete
+            heroEl.classList.remove('intro');
+            openingEl.style.display = 'none';
+            doorsEl.style.display = 'none';
+          }
+        }
+
+        introRafId = requestAnimationFrame(tick);
+      }
+
+      // Wait for all 5 images + tilt video canplaythrough + 120ms pause (5s failsafe)
+      function preloadAndStartIntro() {
+        if (prefersReducedMotion) {
+          layoutHarborluxStage();
+          applyReducedMotionFinalState();
+          return;
+        }
+
+        let started = false;
+        function begin() {
+          if (started) return;
+          started = true;
+          measureSummitWidthPerEm();
+          layoutHarborluxStage();
+          setTimeout(runCinematicIntro, 120);
+        }
+
+        const failsafe = setTimeout(begin, 5000);
+
+        const imgUrls = [
+          'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261117_063048_97fd9a70-adbe-46bd-bfce-ec1004f6c7d8.png&w=2000&q=85',
+          document.getElementById('hl-aerial-img').src,
+          document.getElementById('hl-back-img').src,
+          document.getElementById('hl-mid-img').src,
+          document.getElementById('hl-front-img').src
+        ];
+
+        const imgPromises = imgUrls.map(src => new Promise(resolve => {
+          const im = new Image();
+          im.onload = resolve;
+          im.onerror = resolve;
+          im.src = src;
+        }));
+
+        const videoPromise = new Promise(resolve => {
+          if (tiltVideo.readyState >= 4) {
+            resolve();
+          } else {
+            tiltVideo.addEventListener('canplaythrough', resolve, { once: true });
+            tiltVideo.addEventListener('error', resolve, { once: true });
+          }
+        });
+
+        const fontPromise = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+
+        Promise.all([...imgPromises, videoPromise, fontPromise]).then(() => {
+          clearTimeout(failsafe);
+          begin();
+        });
+      }
+
+      // Replay Intro button
+      const replayBtn = document.getElementById('hl-replay-btn');
+      if (replayBtn) {
+        replayBtn.addEventListener('click', () => {
+          layoutHarborluxStage();
+          runCinematicIntro();
+        });
+      }
+
+      // Resize listener
+      window.addEventListener('resize', () => {
+        measureSummitWidthPerEm();
+        layoutHarborluxStage();
+      });
+
+      /* -----------------------------------------------------------------------
+         PART B: NEXUS CITY INTERACTIVE SYSTEMS
+         ----------------------------------------------------------------------- */
+
+      // 1. Sticky Navbar Visibility (IntersectionObserver on Harborlux Hero)
+      const nexusNavbar = document.getElementById('nexus-navbar');
+      if (nexusNavbar && 'IntersectionObserver' in window) {
+        const navObs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              nexusNavbar.classList.add('shown');
+            } else {
+              nexusNavbar.classList.remove('shown');
+            }
+          });
+        }, { threshold: 0.12 });
+        navObs.observe(heroEl);
+      }
+
+      // Mobile menu toggle
+      const mobileToggle = document.getElementById('nexus-mobile-toggle');
+      const mobileMenu = document.getElementById('nexus-mobile-menu');
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+      }
+
+      // 2. Scroll Reveal & Animated Counters
+      const revealEls = document.querySelectorAll('.reveal-up');
+      if ('IntersectionObserver' in window) {
+        const revObs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              revObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        revealEls.forEach(el => revObs.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('in-view'));
+      }
+
+      function animateCounters() {
+        const counters = document.querySelectorAll('[data-counter]');
+        if (!('IntersectionObserver' in window)) return;
+        const cObs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            cObs.unobserve(el);
+            const target = parseFloat(el.getAttribute('data-counter'));
+            const format = el.getAttribute('data-format');
+            const start = performance.now();
+            const dur = 1600;
+            function step(now) {
+              const p = Math.min(1, (now - start) / dur);
+              const eased = 1 - Math.pow(1 - p, 3);
+              const val = target * eased;
+              if (format === 'percent') {
+                el.textContent = val.toFixed(1) + '%';
+              } else {
+                el.textContent = Math.round(val).toLocaleString();
+              }
+              if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          });
+        }, { threshold: 0.3 });
+        counters.forEach(c => cObs.observe(c));
+      }
+      animateCounters();
+
+      // 3. Ambient Background Cyber Particles Canvas
+      function initBgCanvas() {
+        const canvas = document.getElementById('nexus-bg-canvas');
+        if (!canvas || prefersReducedMotion) return;
+        const ctx = canvas.getContext('2d');
+        let w, h;
+        const particles = Array.from({ length: 38 }, () => ({
+          x: Math.random(),
+          y: Math.random(),
+          vx: (Math.random() - 0.5) * 0.0003,
+          vy: (Math.random() - 0.5) * 0.0003,
+          r: 1.2 + Math.random() * 1.8,
+          c: Math.random() > 0.5 ? 'rgba(0,240,255,0.45)' : 'rgba(139,92,246,0.45)'
+        }));
+
+        function resize() {
+          w = canvas.width = window.innerWidth;
+          h = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        function draw() {
+          ctx.clearRect(0, 0, w, h);
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.x = (p.x + p.vx + 1) % 1;
+            p.y = (p.y + p.vy + 1) % 1;
+            const px = p.x * w, py = p.y * h;
+            ctx.beginPath();
+            ctx.arc(px, py, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.c;
+            ctx.fill();
+            for (let j = i + 1; j < particles.length; j++) {
+              const q = particles[j];
+              const dx = px - q.x * w, dy = py - q.y * h;
+              const d = Math.hypot(dx, dy);
+              if (d < 130) {
+                ctx.beginPath();
+                ctx.moveTo(px, py);
+                ctx.lineTo(q.x * w, q.y * h);
+                ctx.strokeStyle = `rgba(0, 240, 255, ${(1 - d / 130) * 0.08})`;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(draw);
+        }
+        requestAnimationFrame(draw);
+      }
+
+      // 4. NEXUS Command Banner Animated Skyline Canvas (Skyscrapers, Windows, Drones, Roads)
+      function initSkylineCanvas() {
+        const canvas = document.getElementById('nexus-skyline-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let w = 0, h = 0;
+        let buildings = [];
+        const drones = Array.from({ length: 7 }, (_, i) => ({
+          x: Math.random(),
+          y: 0.16 + Math.random() * 0.35,
+          speed: 0.0005 + Math.random() * 0.0008,
+          dir: i % 2 === 0 ? 1 : -1
+        }));
+        const cars = Array.from({ length: 14 }, (_, i) => ({
+          x: Math.random(),
+          lane: i % 2,
+          speed: 0.0018 + Math.random() * 0.0022
+        }));
+
+        function buildCity() {
+          w = canvas.width = canvas.clientWidth;
+          h = canvas.height = canvas.clientHeight;
+          buildings = [];
+          let cx = 0;
+          while (cx < w) {
+            const bw = 28 + Math.random() * 52;
+            const bh = h * (0.26 + Math.random() * 0.54);
+            const wins = [];
+            for (let wy = h - bh + 12; wy < h - 55; wy += 14) {
+              for (let wx = cx + 6; wx < cx + bw - 8; wx += 10) {
+                if (Math.random() > 0.38) {
+                  wins.push({ x: wx, y: wy, c: Math.random() > 0.25 ? '#00f0ff' : '#a78bfa', a: 0.25 + Math.random() * 0.6 });
+                }
+              }
+            }
+            buildings.push({ x: cx, w: bw, h: bh, wins });
+            cx += bw + 4;
+          }
+        }
+        buildCity();
+        window.addEventListener('resize', buildCity);
+
+        function render(t) {
+          ctx.clearRect(0, 0, w, h);
+          // Sky gradient
+          const grad = ctx.createLinearGradient(0, 0, 0, h);
+          grad.addColorStop(0, '#070b1e');
+          grad.addColorStop(0.65, '#0b1636');
+          grad.addColorStop(1, '#050816');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, w, h);
+
+          // Perspective Digital Road Grid at bottom
+          ctx.strokeStyle = 'rgba(0, 240, 255, 0.14)';
+          ctx.lineWidth = 1;
+          for (let i = 0; i <= 12; i++) {
+            const x = (i / 12) * w;
+            ctx.beginPath();
+            ctx.moveTo(w * 0.5 + (x - w * 0.5) * 0.3, h - 52);
+            ctx.lineTo(x, h);
+            ctx.stroke();
+          }
+
+          // Skyscrapers + glowing windows
+          for (const b of buildings) {
+            ctx.fillStyle = '#081024';
+            ctx.fillRect(b.x, h - b.h, b.w, b.h);
+            ctx.strokeStyle = 'rgba(0, 168, 255, 0.22)';
+            ctx.strokeRect(b.x, h - b.h, b.w, b.h);
+            for (const win of b.wins) {
+              const flicker = 0.7 + 0.3 * Math.sin(t * 0.002 + win.x * 0.1);
+              ctx.fillStyle = win.c;
+              ctx.globalAlpha = win.a * flicker;
+              ctx.fillRect(win.x, win.y, 4, 6);
+            }
+            ctx.globalAlpha = 1;
+          }
+
+          // Moving Vehicles on Digital Highway
+          for (const c of cars) {
+            c.x = (c.x + c.speed * (c.lane === 0 ? 1 : -1) + 1) % 1;
+            const cy = h - (c.lane === 0 ? 22 : 34);
+            ctx.fillStyle = c.lane === 0 ? '#00f0ff' : '#f472b6';
+            ctx.fillRect(c.x * w, cy, 18, 2.5);
+          }
+
+          // Flying Drones
+          for (const d of drones) {
+            d.x = (d.x + d.speed * d.dir + 1) % 1;
+            const dx = d.x * w;
+            const dy = d.y * h + Math.sin(t * 0.003 + dx * 0.01) * 5;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(dx - 5, dy - 1, 10, 2);
+            ctx.beginPath();
+            ctx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = '#00f0ff';
+            ctx.fill();
+          }
+
+          if (!prefersReducedMotion) requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+      }
+
+      // 5. Smart Transportation Interactive Map Canvas & Route Planner
+      const activeLayers = { traffic: true, metro: true, bus: true, ev: true };
+      document.querySelectorAll('.layer-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const l = btn.getAttribute('data-layer');
+          activeLayers[l] = !activeLayers[l];
+          btn.classList.toggle('opacity-40', !activeLayers[l]);
+        });
+      });
+
+      function initTransportCanvas() {
+        const canvas = document.getElementById('transport-map-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let w = 0, h = 0;
+        function resize() {
+          w = canvas.width = canvas.clientWidth;
+          h = canvas.height = canvas.clientHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const vehicles = Array.from({ length: 18 }, (_, i) => ({
+          t: Math.random(),
+          speed: 0.0014 + Math.random() * 0.0018,
+          type: i < 6 ? 'metro' : (i < 12 ? 'bus' : 'traffic'),
+          row: i % 3
+        }));
+
+        function draw() {
+          ctx.clearRect(0, 0, w, h);
+          // Grid
+          ctx.strokeStyle = 'rgba(0,240,255,0.07)';
+          ctx.lineWidth = 1;
+          for (let x = 0; x < w; x += 36) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+          for (let y = 0; y < h; y += 36) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+
+          // Traffic Arteries
+          if (activeLayers.traffic) {
+            const rows = [h * 0.25, h * 0.55, h * 0.8];
+            const cols = ['#10b981', '#f59e0b', '#f43f5e'];
+            rows.forEach((ry, idx) => {
+              ctx.strokeStyle = cols[idx];
+              ctx.globalAlpha = 0.35;
+              ctx.lineWidth = 4;
+              ctx.beginPath(); ctx.moveTo(20, ry); ctx.lineTo(w - 20, ry); ctx.stroke();
+            });
+            ctx.globalAlpha = 1;
+          }
+
+          // Metro Line
+          if (activeLayers.metro) {
+            ctx.strokeStyle = '#8b5cf6';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([6, 4]);
+            ctx.beginPath();
+            ctx.moveTo(30, h * 0.18);
+            ctx.quadraticCurveTo(w * 0.5, h * 0.5, w - 30, h * 0.82);
+            ctx.stroke();
+            ctx.setLineDash([]);
+          }
+
+          // EV Chargers & Bike Docks
+          if (activeLayers.ev) {
+            const pts = [[0.2, 0.3], [0.45, 0.22], [0.72, 0.48], [0.32, 0.74], [0.82, 0.72]];
+            pts.forEach(([px, py]) => {
+              ctx.beginPath();
+              ctx.arc(px * w, py * h, 5, 0, Math.PI * 2);
+              ctx.fillStyle = '#10b981';
+              ctx.fill();
+            });
+          }
+
+          // Moving Vehicles
+          vehicles.forEach(v => {
+            if (!activeLayers[v.type]) return;
+            v.t = (v.t + v.speed) % 1;
+            let vx, vy, color;
+            if (v.type === 'metro') {
+              vx = 30 + v.t * (w - 60);
+              vy = h * 0.18 + v.t * (h * 0.64);
+              color = '#c084fc';
+            } else {
+              const rows = [h * 0.25, h * 0.55, h * 0.8];
+              vx = 20 + v.t * (w - 40);
+              vy = rows[v.row];
+              color = v.type === 'bus' ? '#38bdf8' : '#00f0ff';
+            }
+            ctx.beginPath();
+            ctx.arc(vx, vy, 4.5, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+          });
+
+          if (!prefersReducedMotion) requestAnimationFrame(draw);
+        }
+        requestAnimationFrame(draw);
+      }
+
+      // Working Route Planner
+      let selectedMode = 'metro';
+      document.querySelectorAll('.route-mode-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.route-mode-btn').forEach(b => {
+            b.classList.remove('active', 'bg-cyan-500/20', 'text-cyan-200', 'border-cyan-400/50');
+            b.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+          });
+          btn.classList.add('active', 'bg-cyan-500/20', 'text-cyan-200', 'border-cyan-400/50');
+          btn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+          selectedMode = btn.getAttribute('data-mode');
+          calculateRoute();
+        });
+      });
+
+      function calculateRoute() {
+        const origin = document.getElementById('route-origin').value;
+        const dest = document.getElementById('route-dest').value;
+        if (origin === dest) {
+          document.getElementById('route-time').textContent = '0 min';
+          document.getElementById('route-distance').textContent = '0.0 km • Already at hub';
+          document.getElementById('route-co2').textContent = '0 kg CO₂';
+          document.getElementById('route-next').textContent = 'Select two different hubs';
+          return;
+        }
+        const hash = (origin.length * 7 + dest.length * 13) % 11 + 3.2;
+        const dist = hash.toFixed(1);
+        const modeMap = {
+          metro: { mult: 1.5, label: 'MagLev Line M1', co2: 0.28, cong: 'Low Congestion', next: 'Next train: 2 min' },
+          evbus: { mult: 2.3, label: 'EV Rapid Bus B4', co2: 0.24, cong: 'Moderate Flow', next: 'Next bus: 4 min' },
+          pod:   { mult: 1.9, label: 'Autonomous V2X Pod', co2: 0.19, cong: 'AI Green-Wave', next: 'Pod ETA: 1 min' },
+          bike:  { mult: 3.8, label: 'Protected Sky-Cycle', co2: 0.32, cong: 'Clear Lane', next: '18 bikes at dock' }
+        };
+        const m = modeMap[selectedMode];
+        const mins = Math.max(4, Math.round(hash * m.mult));
+        document.getElementById('route-time').textContent = mins + ' min';
+        document.getElementById('route-distance').textContent = `${dist} km • ${m.label}`;
+        document.getElementById('route-co2').textContent = `${(hash * m.co2).toFixed(1)} kg CO₂ saved`;
+        document.getElementById('route-congestion').textContent = m.cong;
+        document.getElementById('route-next').textContent = m.next;
+      }
+
+      document.getElementById('route-planner-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        calculateRoute();
+        showToast('Optimal route calculated via NEXUS Mobility AI');
+      });
+
+      // 6. Healthcare Cards & Mini-Map Inspector
+      const hospitalsData = [
+        { name: 'Nexus Central Medical', spec: 'Trauma', wait: '9 min', beds: 71, amb: 14, doctors: 186, desc: 'Level-1 Trauma & Robotic Surgery Hub with rooftop medevac pad.' },
+        { name: 'Harborview Trauma Center', spec: 'Cardiology', wait: '14 min', beds: 78, amb: 11, doctors: 142, desc: 'Waterfront emergency & cardiovascular center near Harborlux.' },
+        { name: "BioTech Children's Hospital", spec: 'Pediatrics', wait: '11 min', beds: 64, amb: 9, doctors: 128, desc: 'Genomic pediatric care and AI-assisted neonatal suites.' },
+        { name: 'Quantum Diagnostics Hub', spec: 'Trauma', wait: '8 min', beds: 59, amb: 8, doctors: 158, desc: 'Instant MRI/Bio-scan urgent care and tele-medicine command.' }
+      ];
+
+      function renderHospitals(filter = 'all') {
+        const container = document.getElementById('hospital-cards');
+        container.innerHTML = '';
+        hospitalsData
+          .filter(h => filter === 'all' || h.spec === filter)
+          .forEach((h) => {
+            const card = document.createElement('div');
+            card.className = 'nexus-glass nexus-card-lift rounded-2xl p-5 border-t-2 border-t-emerald-400/70';
+            card.innerHTML = `
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-300">${h.spec} Center</span>
+                  <h3 class="text-base font-bold text-white mt-0.5">${h.name}</h3>
+                </div>
+                <span class="px-2 py-0.5 rounded-lg text-[11px] font-semibold bg-cyan-500/20 text-cyan-200">ER ~${h.wait}</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-400">${h.desc}</p>
+              <div class="mt-4">
+                <div class="flex justify-between text-[11px] text-slate-300 mb-1">
+                  <span>Bed Occupancy</span><span>${h.beds}%</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full" style="width:${h.beds}%"></div>
+                </div>
+              </div>
+              <div class="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-300">
+                <span>🚑 ${h.amb} Ambulances</span>
+                <span>🩺 ${h.doctors} Doctors On-Duty</span>
+              </div>
+            `;
+            container.appendChild(card);
+          });
+      }
+      renderHospitals();
+
+      document.querySelectorAll('.spec-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.spec-btn').forEach(b => {
+            b.classList.remove('active', 'bg-emerald-500/20', 'text-emerald-300', 'border-emerald-400/40');
+            b.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+          });
+          btn.classList.add('active', 'bg-emerald-500/20', 'text-emerald-300', 'border-emerald-400/40');
+          btn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+          renderHospitals(btn.getAttribute('data-spec'));
+        });
+      });
+
+      document.querySelectorAll('.med-pin').forEach(pin => {
+        pin.addEventListener('click', () => {
+          const h = hospitalsData[parseInt(pin.getAttribute('data-hosp'), 10)];
+          if (!h) return;
+          document.getElementById('hi-name').textContent = h.name;
+          document.getElementById('hi-desc').textContent = `${h.desc} ${h.amb} ambulances docked, ER wait ~${h.wait} (simulated).`;
+          document.getElementById('hi-beds').textContent = `Bed Occupancy: ${h.beds}%`;
+        });
+      });
+
+      // 7. Education Institutions Grid
+      const eduData = [
+        { name: 'Quantum University of Technology', cat: 'Universities', count: '34,000 Students', desc: 'Flagship robotics, quantum computing, and clean-energy research campus.' },
+        { name: 'Harbor Science & Arts Academy', cat: 'Schools', count: '142 Smart Schools', desc: 'K-12 network featuring holographic labs and 1:1 adaptive AI tutoring.' },
+        { name: 'NEXUS Metropolitan College', cat: 'Universities', count: '18,500 Students', desc: 'Applied urban architecture, digital twin engineering, and civic leadership.' },
+        { name: 'Civic Digital Learning Commons', cat: 'Digital', count: '48 District Hubs', desc: 'Free 24/7 coding studios, VR classrooms, and lifelong skill academies.' },
+        { name: 'Holographic Smart Classrooms', cat: 'Digital', count: '14,200 Active Rooms', desc: 'Spatial projection classrooms synced across international partner cities.' },
+        { name: 'Bio-Climate Innovation Institute', cat: 'Research', count: '318 Active Labs', desc: 'Next-gen carbon capture, desalination, and solid-state grid storage.' }
+      ];
+
+      function renderEdu(cat = 'all') {
+        const grid = document.getElementById('edu-grid');
+        grid.innerHTML = '';
+        eduData.filter(e => cat === 'all' || e.cat === cat).forEach(item => {
+          const el = document.createElement('div');
+          el.className = 'nexus-glass nexus-card-lift rounded-2xl p-5';
+          el.innerHTML = `
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-purple-500/20 text-purple-300">${item.cat}</span>
+              <span class="text-xs font-semibold text-cyan-300">${item.count}</span>
+            </div>
+            <h3 class="mt-3 text-base font-bold text-white">${item.name}</h3>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">${item.desc}</p>
+          `;
+          grid.appendChild(el);
+        });
+      }
+      renderEdu();
+
+      document.querySelectorAll('.edu-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.edu-tab').forEach(t => {
+            t.classList.remove('active', 'bg-purple-500/25', 'text-purple-200', 'border-purple-400/40');
+            t.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+          });
+          tab.classList.add('active', 'bg-purple-500/25', 'text-purple-200', 'border-purple-400/40');
+          tab.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+          renderEdu(tab.getAttribute('data-edu'));
+        });
+      });
+
+      // 8. Chart.js Smart City Analytics
+      let energyChart = null;
+      let commuterChart = null;
+
+      const chartDatasets = {
+        '24h': {
+          labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+          renewable: [1.5, 1.4, 2.0, 2.7, 2.5, 1.9],
+          demand:    [1.8, 1.6, 2.4, 2.9, 2.8, 2.4],
+          commuters: [920, 540, 380, 300]
+        },
+        '7d': {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          renewable: [2.1, 2.3, 2.2, 2.5, 2.4, 2.6, 2.7],
+          demand:    [2.6, 2.7, 2.6, 2.8, 2.7, 2.2, 2.1],
+          commuters: [960, 510, 410, 290]
+        },
+        '30d': {
+          labels: ['Wk 1', 'Wk 2', 'Wk 3', 'Wk 4'],
+          renewable: [2.2, 2.4, 2.5, 2.6],
+          demand:    [2.7, 2.6, 2.6, 2.5],
+          commuters: [990, 560, 430, 310]
+        }
+      };
+
+      function initCharts() {
+        if (typeof Chart === 'undefined') return;
+        const eCtx = document.getElementById('energy-line-chart');
+        const cCtx = document.getElementById('commuter-bar-chart');
+        if (!eCtx || !cCtx) return;
+
+        const d = chartDatasets['24h'];
+        energyChart = new Chart(eCtx, {
+          type: 'line',
+          data: {
+            labels: d.labels,
+            datasets: [
+              {
+                label: 'Renewable Output (GW)',
+                data: d.renewable,
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16,185,129,0.16)',
+                fill: true,
+                tension: 0.4,
+                borderWidth: 2.5
+              },
+              {
+                label: 'Total Demand (GW)',
+                data: d.demand,
+                borderColor: '#00f0ff',
+                backgroundColor: 'rgba(0,240,255,0.08)',
+                fill: true,
+                tension: 0.4,
+                borderWidth: 2.5
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#cbd5e1', font: { size: 11 } } } },
+            scales: {
+              x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.06)' } },
+              y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.06)' } }
+            }
+          }
+        });
+
+        commuterChart = new Chart(cCtx, {
+          type: 'bar',
+          data: {
+            labels: ['MagLev Metro', 'EV Bus', 'Autonomous Pod', 'Bike-Share'],
+            datasets: [{
+              label: 'Daily Trips (k)',
+              data: d.commuters,
+              backgroundColor: ['#8b5cf6', '#00a8ff', '#00f0ff', '#10b981'],
+              borderRadius: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { ticks: { color: '#cbd5e1', font: { size: 11 } }, grid: { display: false } },
+              y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.06)' } }
+            }
+          }
+        });
+      }
+
+      document.querySelectorAll('.tf-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tf-btn').forEach(b => {
+            b.classList.remove('active', 'bg-cyan-500/25', 'text-cyan-200');
+            b.classList.add('text-slate-400');
+          });
+          btn.classList.add('active', 'bg-cyan-500/25', 'text-cyan-200');
+          btn.classList.remove('text-slate-400');
+          const tf = btn.getAttribute('data-tf');
+          const d = chartDatasets[tf];
+          if (energyChart && commuterChart && d) {
+            energyChart.data.labels = d.labels;
+            energyChart.data.datasets[0].data = d.renewable;
+            energyChart.data.datasets[1].data = d.demand;
+            energyChart.update();
+            commuterChart.data.datasets[0].data = d.commuters;
+            commuterChart.update();
+          }
+        });
+      });
+
+      // 9. Important City Locations Interactive SVG Map
+      const cityLocations = [
+        { name: 'Harborlux Summit Tower', cat: 'Landmark', x: 455, y: 315, color: '#F2B8C0', desc: 'Iconic 92-story waterfront penthouse spire overlooking NEXUS Harbour.', info: 'Private Sky-Lobby Open • Direct Water Taxi & Heli-Pad', hub: 'Harborlux Summit Tower' },
+        { name: 'Nexus City Hall', cat: 'Civic', x: 310, y: 155, color: '#00f0ff', desc: 'Central municipal governance plaza and Digital Twin Command Center.', info: 'Citizen Services 08:00–20:00 • Public Viewing Deck', hub: 'Nexus City Hall' },
+        { name: 'Nexus Central Medical', cat: 'Hospital', x: 210, y: 235, color: '#10b981', desc: 'Flagship Level-1 Trauma, Robotic Surgery, and Bio-Medical Research Hospital.', info: '24/7 Emergency • 14 Ambulances Ready', hub: 'Nexus Central Medical' },
+        { name: 'Quantum University', cat: 'Education', x: 645, y: 110, color: '#8b5cf6', desc: 'Premier smart campus for AI, robotics, and sustainable urban engineering.', info: '34,000 Students • Open Innovation Library', hub: 'Quantum University' },
+        { name: 'Central MagLev Terminal', cat: 'Transit', x: 515, y: 205, color: '#38bdf8', desc: 'High-speed subterranean MagLev hub connecting all 8 city districts.', info: 'Trains every 90 sec • 99.4% On-Time', hub: 'Central MagLev Terminal' },
+        { name: 'AeroNexus International Airport', cat: 'Transit', x: 810, y: 95, color: '#38bdf8', desc: 'Zero-emission eVTOL vertiport and international aviation gateway.', info: '14 min via MagLev Express', hub: 'AeroNexus International Airport' },
+        { name: 'Skyline Eco Park & Museum', cat: 'Culture', x: 140, y: 105, color: '#34d399', desc: '420-acre urban forest, botanical dome, and Museum of Future Design.', info: 'Free Public 6G Wi-Fi • Open until 23:00', hub: 'Skyline Eco Park' },
+        { name: 'Harbor Galleria Shopping', cat: 'Culture', x: 690, y: 265, color: '#f472b6', desc: 'Waterfront luxury retail, autonomous dining promenade, and art atrium.', info: 'Open 10:00–22:00 • Smart Parking 78% Open', hub: 'Harborlux Summit Tower' },
+        { name: 'Central Police & Fire HQ', cat: 'Civic', x: 390, y: 245, color: '#fb7185', desc: 'Integrated Rapid Response Precinct and High-Rise Drone Fire Unit.', info: '24/7 Emergency Dispatch • Dial 911', hub: 'Nexus City Hall' }
+      ];
+
+      let activeLocHub = 'Harborlux Summit Tower';
+
+      function renderCityMarkers(filterCat = 'all') {
+        const g = document.getElementById('city-markers-group');
+        if (!g) return;
+        g.innerHTML = '';
+        cityLocations
+          .filter(loc => filterCat === 'all' || loc.cat === filterCat)
+          .forEach(loc => {
+            const grp = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            grp.setAttribute('transform', `translate(${loc.x}, ${loc.y})`);
+            grp.setAttribute('class', 'cursor-pointer');
+
+            const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            ring.setAttribute('r', '14');
+            ring.setAttribute('fill', loc.color);
+            ring.setAttribute('opacity', '0.22');
+
+            const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            dot.setAttribute('r', '7');
+            dot.setAttribute('fill', loc.color);
+            dot.setAttribute('stroke', '#ffffff');
+            dot.setAttribute('stroke-width', '2');
+
+            const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            label.setAttribute('x', '12');
+            label.setAttribute('y', '4');
+            label.setAttribute('fill', '#e2e8f0');
+            label.setAttribute('font-size', '11');
+            label.setAttribute('font-weight', '600');
+            label.textContent = loc.name;
+
+            grp.appendChild(ring);
+            grp.appendChild(dot);
+            grp.appendChild(label);
+
+            grp.addEventListener('click', () => {
+              document.getElementById('loc-cat').textContent = loc.cat;
+              document.getElementById('loc-name').textContent = loc.name;
+              document.getElementById('loc-desc').textContent = loc.desc;
+              document.getElementById('loc-info').textContent = loc.info;
+              activeLocHub = loc.hub;
+              document.getElementById('location-popup').classList.remove('hidden');
+            });
+
+            g.appendChild(grp);
+          });
+      }
+      renderCityMarkers();
+
+      document.querySelectorAll('.map-cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.map-cat-btn').forEach(b => {
+            b.classList.remove('active', 'bg-cyan-500/25', 'text-cyan-200', 'border-cyan-400/50');
+            b.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+          });
+          btn.classList.add('active', 'bg-cyan-500/25', 'text-cyan-200', 'border-cyan-400/50');
+          btn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+          renderCityMarkers(btn.getAttribute('data-cat'));
+        });
+      });
+
+      document.getElementById('close-loc-popup').addEventListener('click', () => {
+        document.getElementById('location-popup').classList.add('hidden');
+      });
+
+      document.getElementById('loc-route-btn').addEventListener('click', () => {
+        const destSel = document.getElementById('route-dest');
+        if (destSel) {
+          destSel.value = activeLocHub;
+          calculateRoute();
+          document.getElementById('transportation').scrollIntoView({ behavior: 'smooth' });
+          showToast('Destination set to ' + activeLocHub);
+        }
+      });
+
+      // 10. Smart City News & Updates
+      const newsArticles = [
+        {
+          cat: 'Development',
+          date: 'Nov 19, 2026',
+          title: 'Harborlux Summit Crown Penthouses Connect Directly to NEXUS 6G Grid',
+          summary: 'The flagship 92-story waterfront tower completes smart-grid integration with rooftop solar glass and private eVTOL docking.',
+          body: 'Harborlux Residences has officially completed its deep integration with the NEXUS CITY municipal energy and mobility grid. Residents now benefit from zero-carbon geothermal climate balancing, direct biometric MagLev access, and automated storm-glass tinting tuned to real-time harbour weather telemetry.',
+          grad: 'from-purple-600/40 via-indigo-900/60 to-cyan-500/30'
+        },
+        {
+          cat: 'Transportation',
+          date: 'Nov 14, 2026',
+          title: 'Autonomous MagLev Line M4 Cuts Cross-Harbour Commutes to 7 Minutes',
+          summary: 'Twelve new magnetic-levitation trainsets enter service with predictive AI headway scheduling.',
+          body: 'NEXUS Transit Authority has inaugurated the underwater MagLev Line M4 linking Harborlux Waterfront to Quantum University and AeroNexus Airport. Simulated passenger telemetry indicates a 24% reduction in Midtown Tunnel congestion during peak evening hours.',
+          grad: 'from-cyan-500/40 via-blue-900/60 to-indigo-900/40'
+        },
+        {
+          cat: 'Environment',
+          date: 'Nov 08, 2026',
+          title: 'NEXUS Reaches 84.6% Renewable Energy Milestone Ahead of 2027 Target',
+          summary: 'New offshore wind turbines and solid-state district batteries push clean power to a record citywide high.',
+          body: 'With 14 additional deep-water wind turbines now feeding the coastal substation, NEXUS CITY has surpassed 84.6% renewable electricity generation. Combined with 1.2 million urban forest trees, citywide AQI averaged a crisp 28 over the last 30 days.',
+          grad: 'from-emerald-500/40 via-teal-900/60 to-cyan-900/40'
+        }
+      ];
+
+      function renderNews(filter = 'all') {
+        const grid = document.getElementById('news-grid');
+        grid.innerHTML = '';
+        newsArticles.filter(n => filter === 'all' || n.cat === filter).forEach((item) => {
+          const card = document.createElement('article');
+          card.className = 'nexus-glass nexus-card-lift rounded-2xl overflow-hidden flex flex-col justify-between';
+          card.innerHTML = `
+            <div>
+              <div class="h-36 bg-gradient-to-br ${item.grad} p-4 flex flex-col justify-between border-b border-white/10">
+                <span class="w-fit px-2.5 py-1 rounded-lg bg-black/45 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-cyan-200">${item.cat}</span>
+                <span class="text-[11px] text-white/75">${item.date}</span>
+              </div>
+              <div class="p-5">
+                <h3 class="text-base font-bold text-white leading-snug">${item.title}</h3>
+                <p class="mt-2 text-xs text-slate-400 leading-relaxed">${item.summary}</p>
+              </div>
+            </div>
+            <div class="px-5 pb-5">
+              <button type="button" class="read-news-btn text-xs font-semibold text-nexus-cyan hover:text-white inline-flex items-center gap-1 cursor-pointer">
+                Read Full Briefing <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          `;
+          card.querySelector('.read-news-btn').addEventListener('click', () => {
+            document.getElementById('nm-cat').textContent = item.cat;
+            document.getElementById('nm-title').textContent = item.title;
+            document.getElementById('nm-date').textContent = item.date + ' • NEXUS Civic Press';
+            document.getElementById('nm-body').textContent = item.body;
+            document.getElementById('news-modal').classList.remove('hidden');
+          });
+          grid.appendChild(card);
+        });
+      }
+      renderNews();
+
+      document.querySelectorAll('.news-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.news-filter').forEach(b => {
+            b.classList.remove('active', 'bg-cyan-500/25', 'text-cyan-200', 'border-cyan-400/40');
+            b.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+          });
+          btn.classList.add('active', 'bg-cyan-500/25', 'text-cyan-200', 'border-cyan-400/40');
+          btn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+          renderNews(btn.getAttribute('data-news'));
+        });
+      });
+
+      // 11. Modals, Copy Buttons & Forms
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => copyText(btn.getAttribute('data-copy')));
+      });
+
+      document.getElementById('hl-enquire-trigger').addEventListener('click', () => {
+        document.getElementById('enquire-modal').classList.remove('hidden');
+      });
+
+      document.getElementById('hl-lang-btn').addEventListener('click', () => {
+        showToast('Language: English (International)');
+      });
+
+      document.getElementById('open-service-modal').addEventListener('click', () => {
+        document.getElementById('service-modal').classList.remove('hidden');
+      });
+
+      document.querySelectorAll('.close-modal').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.closest('.fixed').classList.add('hidden');
+        });
+      });
+
+      document.getElementById('enquire-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('enquire-modal').classList.add('hidden');
+        e.target.reset();
+        showToast('Harborlux Private Office enquiry received. A concierge will respond shortly.');
+      });
+
+      document.getElementById('service-request-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('service-modal').classList.add('hidden');
+        e.target.reset();
+        showToast('NEXUS 311 service ticket #NX-8492 dispatched.');
+      });
+
+      document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('newsletter-email').value = '';
+        showToast('Subscribed to NEXUS CITY × HARBORLUX briefings.');
+      });
+
+      /* -----------------------------------------------------------------------
+         BOOT SEQUENCE
+         ----------------------------------------------------------------------- */
+      window.addEventListener('DOMContentLoaded', () => {
+        try { if (window.lucide) lucide.createIcons(); } catch (e) {}
+        layoutHarborluxStage();
+        preloadAndStartIntro();
+        initBgCanvas();
+        initSkylineCanvas();
+        initTransportCanvas();
+        initCharts();
+      });
+    })();
+  </script>
+</body>
+</html>
